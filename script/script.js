@@ -2,7 +2,8 @@
 var tela = document.querySelector('canvas');
 var pincel = tela.getContext('2d');
     pincel.fillStyle = 'lightgrey'
- 
+
+const maiorPontuacao = document.getElementById("maiorPontuacao")
 let jogando = false
 let marcou = true
 var x;
@@ -10,9 +11,15 @@ var y;
 let pontuacao = 0
 var jaAcicionou = false
 
+function pegarMaiorPontuacao(){
+        if(localStorage.getItem("pontuacao") != null){
+            maiorPontuacao.innerHTML = "Maior pontuação: " + localStorage.getItem("pontuacao")
+        }
+}
+
 function comecar(){
     if(jogando == true){
-        setTimeout(gerarBola, 2000)
+        setInterval(gerarBola, 2000)
     } else{
 
     }
@@ -21,6 +28,10 @@ function comecar(){
 function gerarBola(){
 
     if(!marcou){
+        if(pontuacao >= parseInt(localStorage.getItem("pontuacao"))){
+            localStorage.setItem("pontuacao", pontuacao)
+        }
+        pegarMaiorPontuacao()
         document.getElementById("pontuacao").style.color = 'red'
         document.getElementById("gameOver").style.visibility = 'visible'
         jogando = false
@@ -39,9 +50,9 @@ function gerarBola(){
     marcou = false
     jaAcicionou = false
 
-    comecar()
 }
 
+// Função para toda vez que desenhar na tela
 document.body.addEventListener("click", clique =>{
     var x2 = clique.pageX - tela.offsetLeft
     var y2 = clique.pageY - tela.offsetTop;
@@ -53,6 +64,8 @@ document.body.addEventListener("click", clique =>{
     if(jogando != true){
         return
     }
+
+    // Verifiicar se coordenadas batem a da bola
     if(x2 > x-30 && x2 < x+30 && y2 > y-20 && y2 < y+20 && jaAcicionou == false) {
         marcou = true
         pontuacao+=1
@@ -70,5 +83,5 @@ function reiniciar(){
     location.reload()
 }
 
-
+pegarMaiorPontuacao()
    
