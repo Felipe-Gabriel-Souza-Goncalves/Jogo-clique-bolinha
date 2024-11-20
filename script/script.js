@@ -7,7 +7,10 @@ let marcou = true
 let pontuacao = 0
 var jaAcicionou = false
 var tempo = 1500
-var intervalo
+var intervalo;
+var saldo = 0
+
+document.getElementById("saldo").innerHTML = saldo
 
 function pegarMaiorPontuacao(){
         if(localStorage.getItem("pontuacao") != null){
@@ -18,6 +21,8 @@ function pegarMaiorPontuacao(){
 }
 
 function comecar(){
+    document.getElementsByClassName("divDificuldade")[0].style.display = "none"
+    setTimeout("", 1000)
     if(jogando == true){
         marcou = true
         intervalo = setInterval(gerarBola, tempo)
@@ -65,6 +70,9 @@ function perder(){
         elementPontuacao.style.color = 'red'
         bolinha.style.display = "none"
         document.getElementById("gameOver").style.visibility = 'visible'
+        saldo +=pontuacao
+        document.getElementById("saldo").innerHTML = saldo
+
         pontuacao = 0
         jogando = false
         clearInterval(intervalo)

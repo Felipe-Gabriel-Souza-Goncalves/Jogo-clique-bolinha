@@ -11,6 +11,7 @@ body{
     margin: 0;
     background-color: rgb(218, 230, 240);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 .tela{
     display: flex;
@@ -50,7 +51,7 @@ body{
 #bolinha{
     position: relative;
     display: none;
-    background-color: rgb(43, 43, 207);
+    background-color: rgba(0, 0, 255, 1);
     margin-left: auto;
     width: 5vh;
     height: 5vh;
@@ -60,4 +61,43 @@ body{
 #gameOver{
     color: red;
     visibility: hidden;
+}
+
+.divDificuldade{
+    position: fixed;
+    margin-top: -25px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(7, 18, 57, 0.613);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    gap: 60px;
+}
+.divDificuldade button{
+    scale: 1.5;
+    width: 300px;
+    padding: 10px 2px;
+}
+
+.loja{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 45vw;
+    height: 100vh;
+    background-color: rgba(7, 18, 57, 0.613);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    gap: 60px;
+}
+.loja table{
+    color: aliceblue;
+    border: 1px solid black;
 }
