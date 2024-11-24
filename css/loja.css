@@ -1,4 +1,22 @@
 .loja{
+    display: flex;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 45vw;
+    height: 100vh;
+    background-color: rgba(7, 18, 57, 0.613);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    gap: 60px;
+}
+.loja table{
+    color: aliceblue;
+    border: 1px solid black;
+}
+.loja{
     position: fixed;
     margin-left: 60%;
     margin-bottom: 100%;
@@ -44,7 +62,11 @@ tr td div{
     /* padding: 0px 30px; */
 }
 
-
+/* #bolinha img{
+    position: relative;
+    margin-right: auto;
+    margin-bottom: auto;
+} */
 /* produtos */
 #bolaAzul{
     background-color: rgb(0, 0, 255);
@@ -57,4 +79,10 @@ tr td div{
 }
 #bolaVerde{
     background-color: rgb(40, 190, 40);
+}
+#bolaRoxa{
+    background-color: rgb(174, 10, 174);
+}
+#bolaLaranja{
+    background-color: rgb(255, 165, 0);
 }

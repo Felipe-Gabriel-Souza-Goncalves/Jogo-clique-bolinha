@@ -38,7 +38,7 @@
 
         <!--  -->
         <div  id="areaDoJogo">
-            <div id="bolinha"></div>
+            <div id="bolinha"><img src="" id="imgBola" alt=""></div>
         </div>
 
 
@@ -64,6 +64,7 @@
         <h2>Saldo: <span id="saldo">0</span></h2>
         <table class="comprasDesignBolas">
             <tr>
+
                 <th>Bolas:</th>
             </tr>
             <tr>
@@ -71,25 +72,37 @@
                     <div id="bolaAzul"></div>
                     <p>Azul</p>
                     <h6>0 pontos</h6>
-                    <button class="botaoComprarBola botao comprado" onclick="corBola('rgba(0, 0, 255, 1)', 'comprarBolaAzul')" id="comprarBolaAzul">Selecionar</button>
+                    <button class="botaoComprarBola botao comprado" onclick="corBola('rgba(0, 0, 255, 1)', 'comprarBolaAzul', '')" id="comprarBolaAzul">Selecionar</button>
                 </td>
                 <td>
                     <div id="bolaAmarela"></div>
                     <p>Amarelo</p>
                     <h6>5 pontos</h6>
-                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaAmarela', 'rgb(255, 255, 0, 1)', 5)" id="comprarBolaAmarela">Comprar</button>
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaAmarela', 'rgb(255, 255, 0, 1)', 5, '')" id="comprarBolaAmarela">Comprar</button>
                 </td>
                 <td>
                     <div id="bolaVermelha"></div>
                     <p>Vermelho</p>
-                    <h6>5 pontos</h6>
-                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaVermelha', 'rgb(255, 0, 0, 1)', 5)" id="comprarBolaVermelha">Comprar</button>
+                    <h6>10 pontos</h6>
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaVermelha', 'rgb(255, 0, 0, 1)', 10, '')" id="comprarBolaVermelha">Comprar</button>
                 </td>
                 <td>
                     <div id="bolaVerde"></div>
                     <p>Verde</p>
-                    <h6>5 pontos</h6>
-                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaVerde', 'rgb(40, 190, 40)', 5)" id="comprarBolaVerde">Comprar</button>
+                    <h6>10 pontos</h6>
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaVerde', 'rgb(40, 190, 40)', 10, '')" id="comprarBolaVerde">Comprar</button>
+                </td>
+                <td>
+                    <div id="bolaRoxa"></div>
+                    <p>Roxa</p>
+                    <h6>15 pontos</h6>
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaRoxa', 'rgb(174, 10, 174)', 15, '')" id="comprarBolaRoxa">Comprar</button>
+                </td>
+                <td>
+                    <div id="bolaLaranja"></div>
+                    <p>Laranja</p>
+                    <h6>15 pontos</h6>
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaLaranja', 'rgb(255, 165, 0)', 15, '')" id="comprarBolaLaranja">Comprar</button>
                 </td>
             </tr>
             <!-- <tr><th>a</th></tr>

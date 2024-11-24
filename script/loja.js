@@ -1,18 +1,23 @@
 
-function corBola(cor, id){
+function corBola(cor, id, img){
     for(let i = 0; i < document.getElementsByClassName('comprado').length; i++){
         document.getElementsByClassName('comprado')[i].innerHTML = "Selecionar"
     }
     
     document.getElementById(id).innerHTML = "Selecionado"
-    bolinha.style.backgroundColor = cor
+    if(cor != ''){
+        bolinha.style.backgroundColor = cor
+    }
+    if(img != ''){
+        document.getElementById('imagemBola').src = img
+    }
 }
 
-function comprarBola(id, cor, preco){
+function comprarBola(id, cor, preco, img){
     if(saldo >= preco){
         saldo -=preco
         document.getElementById('saldo').innerHTML = saldo
-        document.getElementById(id).setAttribute('onclick', `corBola('${cor}', '${id}')`)  
+        document.getElementById(id).setAttribute('onclick', `corBola('${cor}', '${id}','${img}')`)  
         document.getElementById(id).innerHTML = "Selecionar"
         document.getElementById(id).classList.add("comprado")
     }

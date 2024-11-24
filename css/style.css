@@ -57,6 +57,12 @@ body{
     height: 5vh;
     clip-path: circle(50%);
 }
+    #bolinha img{
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 5.5vh;
+    }
 
 #gameOver{
     color: red;
@@ -83,21 +89,3 @@ body{
     padding: 10px 2px;
 }
 
-.loja{
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    z-index: 3;
-    top: 0;
-    width: 45vw;
-    height: 100vh;
-    background-color: rgba(7, 18, 57, 0.613);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    gap: 60px;
-}
-.loja table{
-    color: aliceblue;
-    border: 1px solid black;
-}
