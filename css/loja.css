@@ -44,6 +44,7 @@ tr{
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 td{
     padding: 10px;
@@ -56,17 +57,10 @@ tr td div{
     clip-path: circle(40%);
     margin-left: auto;
     margin-right: auto;
-    /* display: flex; */
+    background-size: cover;
     gap: 100px;
-    /* gap: 40px; */
-    /* padding: 0px 30px; */
 }
 
-/* #bolinha img{
-    position: relative;
-    margin-right: auto;
-    margin-bottom: auto;
-} */
 /* produtos */
 #bolaAzul{
     background-color: rgb(0, 0, 255);
@@ -85,4 +79,29 @@ tr td div{
 }
 #bolaLaranja{
     background-color: rgb(255, 165, 0);
+}
+/* ------------------------ */
+#bolaBaseball{
+    background-image: url("../imagem/bola/bolaBaseball.png");   
+}
+#bolaBasquete{
+    background-image: url("../imagem/bola/bolaBasquete.png");
+}
+#bolaBoliche{
+    background-image: url("../imagem/bola/bolaBoliche.png");
+}
+#bolaFutebol{
+    background-image: url("../imagem/bola/bolaFutebol.png");
+}
+#bolaGolfe{
+    background-image: url("../imagem/bola/bolaGolfe.png");
+}
+#bolaSinuca{
+    background-image: url("../imagem/bola/bolaSinuca.png");
+}
+#bolaTennis{
+    background-image: url("../imagem/bola/bolaTennis.png");
+}
+#bolaVolei{
+    background-image: url("../imagem/bola/bolaVolei.png");
 }

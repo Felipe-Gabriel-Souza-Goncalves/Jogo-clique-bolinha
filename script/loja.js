@@ -9,7 +9,7 @@ function corBola(cor, id, img){
         bolinha.style.backgroundColor = cor
     }
     if(img != ''){
-        document.getElementById('imagemBola').src = img
+        document.getElementById('imgBola').src = img
     }
 }
 

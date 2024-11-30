@@ -4,7 +4,7 @@ const elementPontuacao = document.getElementById("pontuacao")
 let jogando = false
 let marcou = true
 
-let pontuacao = 100
+let pontuacao = 1000
 var jaAcicionou = false
 var tempo = 1500
 var intervalo;
