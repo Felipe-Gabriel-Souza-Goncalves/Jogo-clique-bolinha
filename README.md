@@ -22,3 +22,10 @@ Atualização 29/11/2024:
     -Mais opções de personalização para a bola
       +2 cores
       +8 imagens
+
+Atualização 04/12/2024:
+
+    CORREÇÃO DE BUGS
+    -Imagem da bola não carregava
+    -Pontuação começava no 1000
+    
