@@ -49,6 +49,8 @@ tr{
 td{
     padding: 10px;
     background-color: rgba(0, 0, 139, 0.518);
+    width: 170px;
+    max-width: fit-content;
     margin-right: 40px;
 }
 tr td div{
@@ -59,6 +61,17 @@ tr td div{
     margin-right: auto;
     background-size: cover;
     gap: 100px;
+}
+div .botao{
+    margin-top: 10px;
+}
+#comprasDesignFundo tr td {
+    width: fit-content;
+}
+#comprasDesignFundo tr td div{
+    clip-path: none;
+    width: 200px;
+    height: 120px;
 }
 
 /* produtos */
@@ -105,3 +118,29 @@ tr td div{
 #bolaVolei{
     background-image: url("../imagem/bola/bolaVolei.png");
 }
+/* ------------------------ */
+/* ------------------------ */
+#fundoDia{
+    background-image: url("../imagem/fundo/fundo_dia.jpg");
+}
+#fundoNoite{
+    background-image: url("../imagem/fundo/fundo_noite.png");
+
+}
+#fundoXadrez{
+    background-image: url("../imagem/fundo/fundo_xadrez.jpg");
+
+}
+#fundoFutebol{
+    background-image: url("../imagem/fundo/fundo_campo-futebol.png");
+
+}
+#fundoBasquete{
+    background-image: url("../imagem/fundo/fundo_quadra-basquete.png");
+
+}
+#fundoTennis{
+    background-image: url("../imagem/fundo/fundo_quadra-de-tenis.jpg");
+
+}
+

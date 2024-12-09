@@ -37,7 +37,7 @@
         </div>
 
         <!--  -->
-        <div  id="areaDoJogo">
+        <div id="areaDoJogo">
             <div id="bolinha"><img src="" id="imgBola" alt=""></div>
         </div>
 
@@ -58,14 +58,19 @@
         </div>
     </div>
 
-    <div class="loja">
+    <div class="loja" id="loja">
         <h1 style="text-align: end; padding-right: 100px;" onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
-
+        
         <h2>Saldo: <span id="saldo">0</span></h2>
-        <table class="comprasDesignBolas">
+        <div>
+            <a href="#comprasDesignBolas">Bolas</a> | 
+            <a href="#comprasDesignFundo">Fundos</a>
+        </div>
+
+        <table class="comprasDesignBolas" id="comprasDesignBolas">
             <tr>
 
-                <th><h1>Bolas:</h1></th>
+                <th ><h1>Bolas:</h1></th>
             </tr>
             <tr>
                 <th><h3>Cores</h3></th>
@@ -118,7 +123,7 @@
                     <div id="bolaBaseball"></div>
                     <p>Baseball</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaBaseball', '', 30, 'imagem/bola/bolaBaseball.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaBaseball', '', 30, 'imagem/bola/bolaBaseball.png')" 
                     id="comprarBolaBaseball">
                         Comprar
                     </button>
@@ -127,7 +132,7 @@
                     <div id="bolaBasquete"></div>
                     <p>Basquete</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaBasquete', '', 30, 'imagem/bola/bolaBasquete.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaBasquete', '', 30, 'imagem/bola/bolaBasquete.png')" 
                     id="comprarBolaBasquete">
                         Comprar
                     </button>
@@ -136,7 +141,7 @@
                     <div id="bolaBoliche"></div>
                     <p>Boliche</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaBoliche', '', 30, 'imagem/bola/bolaBoliche.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaBoliche', '', 30, 'imagem/bola/bolaBoliche.png')" 
                     id="comprarBolaBoliche">
                         Comprar
                     </button>
@@ -145,7 +150,7 @@
                     <div id="bolaFutebol"></div>
                     <p>Futebol</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaFutebol', '', 30, 'imagem/bola/bolaFutebol.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaFutebol', '', 30, 'imagem/bola/bolaFutebol.png')" 
                     id="comprarBolaFutebol">
                         Comprar
                     </button>
@@ -154,7 +159,7 @@
                     <div id="bolaGolfe"></div>
                     <p>Golfe</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaGolfe', '', 30, 'imagem/bola/bolaGolfe.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaGolfe', '', 30, 'imagem/bola/bolaGolfe.png')" 
                     id="comprarBolaGolfe">
                         Comprar
                     </button>
@@ -163,7 +168,7 @@
                     <div id="bolaSinuca"></div>
                     <p>Sinuca</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaSinuca', '', 30, 'imagem/bola/bolaSinuca.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaSinuca', '', 30, 'imagem/bola/bolaSinuca.png')" 
                     id="comprarBolaSinuca">
                         Comprar
                     </button>
@@ -172,7 +177,7 @@
                     <div id="bolaTennis"></div>
                     <p>Tennis</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaTennis', '', 30, 'imagem/bola/bolaTennis.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaTennis', '', 30, 'imagem/bola/bolaTennis.png')" 
                     id="comprarBolaTennis">
                         Comprar
                     </button>
@@ -181,7 +186,7 @@
                     <div id="bolaVolei"></div>
                     <p>Vôlei</p>
                     <h6>30 pontos</h6>
-                    <button class="botaoComprarBola" onclick="comprarBola('comprarBolaVolei', '', 30, 'imagem/bola/bolaVolei.png')" 
+                    <button class="botaoComprarBola botao" onclick="comprarBola('comprarBolaVolei', '', 30, 'imagem/bola/bolaVolei.png')" 
                     id="comprarBolaVolei">
                         Comprar
                     </button>
@@ -192,9 +197,82 @@
             <tr><th>a</th></tr> -->
         </table>
         <br><br>
-        <table class="comprasDesignFundo">
+        <table class="comprasDesignFundo" id="comprasDesignFundo">
             <tr>
                 <th>Fundo:</th>
+             
+               
+
+            </tr>
+            <tr>
+                <th>
+
+                    <h1><strong>NÃO FUNCIONA, ESTÁ EM DESENVOLVIMENTO</strong></h1>
+                </th>
+            </tr>
+            <!-- <tr>
+                <th><h3>Cores</h3></th>
+            </tr> -->
+            <tr>
+                <th><h3>Imagens</h3></th>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fundoDia">
+                    </div>
+                        <p>Fundo dia</p>
+                        <h6>50 pontos</h6>
+                        <button id="comprarFundoDia" class="botao" onclick="comprarFundo('comprarFundoDia','', 50,'imagem/fundo/fundo_dia.jpg')">
+                            Comprar
+                        </button>
+                </td>
+                <td>
+                    <div id="fundoNoite">
+                    </div>
+                        <p>Fundo noite</p>
+                        <h6>50 pontos</h6>
+                        <button id="comprarFundoNoite" class="botao" onclick="comprarFundo('comprarFundoNoite','', 50,'imagem/fundo/fundo_noite.png')">
+                            Comprar
+                        </button>
+                </td>
+                <td>
+                    <div id="fundoXadrez">
+                    </div>
+                        <p>Fundo xadrez</p>
+                        <h6>35 pontes</h6>
+                        <button id="comprarFundoXadrez" class="botao" onclick="comprarFundo('comprarFundoXadrez','', 35,'imagem/fundo/fundo_xadrez.jpg')">
+                            Comprar
+                        </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fundoFutebol">
+                    </div>
+                        <p>Fundo futebol</p>
+                        <h6>25 pontos</h6>
+                        <button id="comprarFundoFutebol" class="botao" onclick="comprarFundo('comprarFundoFutebol','', 25,'imagem/fundo/fundo_campo-futebol.png')">
+                            Comprar
+                        </button>
+                </td>
+                <td>
+                    <div id="fundoBasquete">
+                    </div>
+                        <p>Fundo basquete</p>
+                        <h6>25 pontos</h6>
+                        <button id="comprarFundoBasquete" class="botao" onclick="comprarFundo('comprarFundoBasquete','', 25,'imagem/fundo/fundo_quadra-basquete.png')">
+                            Comprar
+                        </button>
+                </td>
+                <td>
+                    <div id="fundoTennis">
+                    </div>
+                        <p>Fundo tennis</p>
+                        <h6></h6>
+                        <button id="comprarFundoTennis" class="botao" onclick="comprarFundo('comprarFundoTennis','', 25,'imagem/fundo/fundo_quadra-de-tenis.jpg')">
+                            Comprar
+                        </button>
+                </td>
             </tr>
         </table>
     </div>

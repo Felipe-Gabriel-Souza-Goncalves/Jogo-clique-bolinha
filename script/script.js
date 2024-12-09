@@ -9,19 +9,26 @@ var jaAcicionou = false
 var tempo = 1500
 var intervalo;
 var saldo = 0
+if(localStorage.getItem("saldo") !=null){
+    saldo = localStorage.getItem("saldo")
+    document.getElementById("saldo").innerHTML = localStorage.getItem("saldo")
 
-document.getElementById("saldo").innerHTML = saldo
+} else{
+    document.getElementById("saldo").innerHTML = saldo
+}
+
 
 function pegarMaiorPontuacao(){
-        if(localStorage.getItem("pontuacao") != null){
-            maiorPontuacao.innerHTML = "Maior pontuação: " + localStorage.getItem("pontuacao")
-        } else if(localStorage.getItem("pontuacao") == null){
+        if(localStorage.getItem("maiorPontuacao") != null){
+            maiorPontuacao.innerHTML = "Maior pontuação: " + localStorage.getItem("maiorPontuacao")
+        } else if(localStorage.getItem("maiorPontuacao") == null){
             localStorage.setItem("pontuacao", pontuacao)
         }
 }
 
 function comecar(){
     document.getElementsByClassName("divDificuldade")[0].style.display = "none"
+    document.getElementById("loja").style.display = "none"
     setTimeout("", 1000)
     if(jogando == true){
         marcou = true
@@ -63,14 +70,15 @@ bolinha.addEventListener("click", ()=>{
 })
 
 function perder(){
-    if(pontuacao >= parseInt(localStorage.getItem("pontuacao"))){
+    if(pontuacao >= parseInt(localStorage.getItem("maiorPontuacao"))){
         localStorage.setItem("pontuacao", pontuacao)
     }
         pegarMaiorPontuacao()
         elementPontuacao.style.color = 'red'
         bolinha.style.display = "none"
         document.getElementById("gameOver").style.visibility = 'visible'
-        saldo +=pontuacao
+        saldo = parseInt(saldo)+parseInt(pontuacao)
+        localStorage.setItem('saldo', saldo)
         document.getElementById("saldo").innerHTML = saldo
 
         pontuacao = 0
