@@ -29,3 +29,8 @@ Atualização 04/12/2024:
     -Imagem da bola não carregava
     -Pontuação começava no 1000
     
+Atualização 09/12/2024:
+
+    - 6 Opções de personalização para o fundo
+    - localStorage para o saldo
+    - Ajuste para fechar a loja quando iniciar o jogo
