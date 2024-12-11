@@ -15,6 +15,6 @@ https://felipe-gabriel-souza-goncalves.github.io/Jogo-clique-bolinha/
 - Escolha de personalização da bola/área de jogo
 
 ## 📁 Outros arquivos:
--[Atualizações do projeto](CHANGELOG.MG)
+-[Atualizações do projeto](CHANGELOG.md)
 
 
