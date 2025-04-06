@@ -1,5 +1,4 @@
 .loja{
-    display: flex;
     display: none;
     flex-direction: column;
     position: fixed;
@@ -7,28 +6,23 @@
     top: 0;
     width: 45vw;
     height: 100vh;
-    background-color: rgba(7, 18, 57, 0.613);
-    backdrop-filter: blur(5px);
+    background-color: rgba(153, 164, 202, 0.781);
+    backdrop-filter: blur(10px);
     text-align: center;
     gap: 60px;
-}
-.loja table{
-    color: aliceblue;
-    border: 1px solid black;
-}
-.loja{
-    position: fixed;
-    margin-left: 60%;
+    margin-left: 55%;
     margin-bottom: 100%;
     overflow-y: auto;
-    /* direction: rtl; */
+    scroll-behavior: smooth;
 }
-@media (max-width: 500px) {
-    .loja{
-        width: 100vw;
-        margin-left: 0;
+.loja div a, .loja div{
+    font-size: 1.2em;
+    color: white;
+    transition: .3s;
+}
+    .loja div a:hover{
+        color: rgb(202, 255, 252);
     }
-}
 
 table tr:first-child{
     padding: 50px 0px;
@@ -38,21 +32,67 @@ table *{
 }
 tr{
     display: flex;
-    /* flex-direction: column; */
     text-align: center;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 15px;
     flex-wrap: wrap;
     margin-top: 10px;
 }
-td{
-    padding: 10px;
-    background-color: rgba(0, 0, 139, 0.518);
-    width: 170px;
-    max-width: fit-content;
-    margin-right: 40px;
+#opcoesBolas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+.opcaoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    min-width: fit-content;
+    padding: 10px 0px 0px;
+    border: 0;
+    border-radius: 15px;
+    gap: 10px;
+    margin: 10px;
+    background-color: rgba(13, 13, 89, 0.748);
+    color: white;
+}
+.opcaoFundo{
+    width: 200px;
+}
+.viewBola{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    clip-path: circle(40%);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+.viewFundo{
+    width: 160px;
+    height: 80px;
+    padding: 10px;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+.btnComprar{
+    width: 100%;
+    background-color: darkblue !important;
+    color: white;
+    border: 0;
+    border-top: 1px solid white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: .3s;
+}
+    .btnComprar:hover{
+        scale: 1.1;
+    }
 tr td div{
     width: 65px;
     height: 65px;
@@ -75,7 +115,7 @@ div .botao{
 }
 
 /* produtos */
-#bolaAzul{
+/* #bolaAzul{
     background-color: rgb(0, 0, 255);
 }
 #bolaAmarela{
@@ -92,9 +132,9 @@ div .botao{
 }
 #bolaLaranja{
     background-color: rgb(255, 165, 0);
-}
+} */
 /* ------------------------ */
-#bolaBaseball{
+/* #bolaBaseball{
     background-image: url("../imagem/bola/bolaBaseball.png");   
 }
 #bolaBasquete{
@@ -117,10 +157,10 @@ div .botao{
 }
 #bolaVolei{
     background-image: url("../imagem/bola/bolaVolei.png");
-}
+} */
 /* ------------------------ */
 /* ------------------------ */
-#fundoDia{
+/* #fundoDia{
     background-image: url("../imagem/fundo/fundo_dia.jpg");
 }
 #fundoNoite{
@@ -142,5 +182,11 @@ div .botao{
 #fundoTennis{
     background-image: url("../imagem/fundo/fundo_quadra-de-tenis.jpg");
 
-}
+} */
 
+@media (max-width: 500px) {
+    .loja{
+        width: 100vw;
+        margin-left: 0;
+    }
+}

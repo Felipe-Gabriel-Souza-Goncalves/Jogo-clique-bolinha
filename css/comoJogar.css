@@ -1,0 +1,49 @@
+#comoJogar{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(153, 164, 202, 0.781);
+    backdrop-filter: blur(5px);
+    display: none;
+    overflow-y: auto;
+}
+#comoJogar button{
+    margin-left: auto;
+    margin-right: 50px;
+}
+#containerGameplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#gameplay1,
+#gameplay2,
+#gameplay3{
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 5px;
+    width: 350px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#gameplay1 video,
+#gameplay2 video,
+#gameplay3 video{
+    max-width: 90vw;
+    
+}
+
+#gameplay1 p:last-child,
+#gameplay2 p:last-child,
+#gameplay3 p:last-child{
+    width: 85%;
+    text-align: justify;
+}

@@ -1,0 +1,51 @@
+[
+    {
+      "id": "fundoDia",
+      "texto": "Fundo dia",
+      "preco": "50",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_dia.jpg",
+      "tipo": "imagem"
+    },
+    {
+      "id": "fundoNoite",
+      "texto": "Fundo noite",
+      "preco": "50",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_noite.png",
+      "tipo": "imagem"
+    },
+    {
+      "id": "fundoXadrez",
+      "texto": "Fundo xadrez",
+      "preco": "35",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_xadrez.jpg",
+      "tipo": "imagem"
+    },
+    {
+      "id": "fundoFutebol",
+      "texto": "Fundo futebol",
+      "preco": "25",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_campo-futebol.png",
+      "tipo": "imagem"
+    },
+    {
+      "id": "fundoBasquete",
+      "texto": "Fundo basquete",
+      "preco": "25",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_quadra-basquete.png",
+      "tipo": "imagem"
+    },
+    {
+      "id": "fundoTennis",
+      "texto": "Fundo tennis",
+      "preco": "25",
+      "cor": "",
+      "imagem": "imagem/fundo/fundo_quadra-de-tenis.jpg",
+      "tipo": "imagem"
+    }
+  ]
+  
