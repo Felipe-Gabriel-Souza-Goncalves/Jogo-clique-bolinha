@@ -1,4 +1,4 @@
-# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.4]
+# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.4.1]
 &nbsp;
 ## [1.1] Atualização 19/11/2024:
     
@@ -43,3 +43,10 @@
 - Melhora na responsividade
 - Loja agora consome as informações de um json ao invés de ser estático no HTML
 - Limite de 30% de movimentação em relação a posição anterior da bola (código fornecido por IA)
+
+## [1.4.1] Correção 12/04/2025:
+- Salva modo escuro em sessionStorage
+- Correção do saldo não funcionar ao reiniciar a página
+- Correção de não aparecer o texto de "Selecionar" para os fundos
+- Ajuste para evitar da bola sair do campo do jogo
+- Ajustes leves na responsividade

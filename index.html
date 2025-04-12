@@ -27,7 +27,7 @@
             <br>
             <h2 id="gameOver">Fim de Jogo!</h2>
             <br>
-            <div style="gap: 40px; display: flex; justify-content: center;">
+            <div id="divBtnPrincipal">
                <a href="#areaDoJogo">
                 <button id="botaoJogar" class="botao" onclick="jogando = true; document.getElementsByClassName('divDificuldade')[0].style.display = 'flex'" >Jogar</button>
                </a>
@@ -101,9 +101,7 @@
     </div>
 
     <div id="comoJogar">
-        <div>
-            <button class="botao" onclick="closeAll('')">Fechar</button>
-        </div>
+        <button class="botao" onclick="closeAll('')">Fechar</button>
         <div id="containerGameplay">
             <div id="gameplay1">
                 <p>Como jogar?</p>

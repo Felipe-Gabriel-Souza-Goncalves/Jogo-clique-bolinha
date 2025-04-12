@@ -48,6 +48,7 @@ function corFundo(cor, id, img){
 function comprarFundo(id, cor, preco, img){
     if(saldo >= preco){
         saldo -= preco
+        document.getElementById(id).innerHTML = "Selecionar"
         document.getElementById('saldo').innerHTML = saldo
         document.getElementById(id).setAttribute('onclick', `corFundo('${cor}', '${id}','${img}')`)  
         document.getElementById(id).classList.add("comprado")
@@ -55,7 +56,12 @@ function comprarFundo(id, cor, preco, img){
 }
 
 async function carregarBolas(){
-    fetch("bolas.json").then(response => response.json())
+    fetch("bolas.json").then(response => {
+        if(!response.ok){
+            alert("Erro ao carregar a loja, reinicie a página ou \nenvie uma notificação para o desenvolvedor")
+        }
+        return response.json()
+    })
     .then(bolas =>{
         bolas.forEach(bola => {
             const opcaoContainer = document.createElement("div")

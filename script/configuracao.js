@@ -1,8 +1,12 @@
 const root = document.querySelector(":root")
-var modoEscuro;
-if(sessionStorage.getItem("modoEscuro") != null){
-    modoEscuro = sessionStorage.getItem("modoEscuro") 
+
+if(sessionStorage.getItem("modoEscuro") == "true"){
+    document.getElementById("inputModoEscuro").checked = true
+    tornarModoEscuro()
+} else{
+    tornarModoClaro()
 }
+
 function toggleModoEscuro(){
     if(document.getElementById("inputModoEscuro").checked == true){
         tornarModoEscuro()
@@ -15,6 +19,8 @@ function tornarModoEscuro(){
     root.style.setProperty("--corFundoHeader", "rgb(29, 36, 43)")
     root.style.setProperty("--corFonte", "rgb(255,255,255)")
     root.style.setProperty("--filtroSvg", "brightness(0) invert(100%) contrast(100%)")
+
+    sessionStorage.setItem("modoEscuro", "true") 
 }
 
 function tornarModoClaro(){
@@ -22,6 +28,8 @@ function tornarModoClaro(){
     root.style.setProperty("--corFundoHeader", "rgb(179, 195, 207)")
     root.style.setProperty("--corFonte", "rgb(0,0,0)")
     root.style.setProperty("--filtroSvg", "brightness(0) saturate(100%)")
+
+    sessionStorage.setItem("modoEscuro", "false")
 }
 
 function closeAll(id){
@@ -36,6 +44,3 @@ function closeAll(id){
 }
 
 document.getElementById("inputModoEscuro").addEventListener("change", toggleModoEscuro)
-
-
-tornarModoClaro()

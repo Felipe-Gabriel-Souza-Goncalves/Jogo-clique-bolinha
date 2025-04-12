@@ -9,8 +9,8 @@
     overflow-y: auto;
 }
 #comoJogar button{
-    margin-left: auto;
-    margin-right: 50px;
+    margin: 10px;
+    margin-left: calc(95% - 90px);
 }
 #containerGameplay{
     display: flex;
@@ -26,7 +26,6 @@
     border: 1px solid black;
     border-radius: 15px;
     margin: 5px;
-    padding: 5px;
     width: 350px;
     max-width: 90vw;
     display: flex;
@@ -38,12 +37,14 @@
 #gameplay2 video,
 #gameplay3 video{
     max-width: 90vw;
-    
 }
 
 #gameplay1 p:last-child,
 #gameplay2 p:last-child,
 #gameplay3 p:last-child{
-    width: 85%;
+    width: 100%;
+    padding: 20px;
     text-align: justify;
+    box-sizing: border-box;
+    border-top: 1px solid black;
 }

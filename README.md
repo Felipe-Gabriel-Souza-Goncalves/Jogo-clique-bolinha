@@ -12,7 +12,7 @@ https://felipe-gabriel-souza-goncalves.github.io/Jogo-clique-bolinha/
     - Fácil: 2seg;
     - Médio: 1,5seg;
     - Difícil: 1seg;
-    - Extremo: 0,75seg;     
+    - Extremo: 0,8seg;     
     ### (Mobile):
     - Fácil: 1,65s;
     - Médio: 1,2s;

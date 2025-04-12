@@ -11,7 +11,7 @@ var intervalo;
 var saldo = 0
 
 if(localStorage.getItem("saldo") !=null){
-    saldo = localStorage.getItem("saldo")
+    saldo = parseInt(localStorage.getItem("saldo"))
     document.getElementById("saldo").innerHTML = localStorage.getItem("saldo")
 } else{
     document.getElementById("saldo").innerHTML = saldo
@@ -75,7 +75,7 @@ function gerarBola() {
 
     // Gera nova posição X com limite de variação de 30%
     let minX = Math.max(0, posicaoAnteriorX - 35);
-    let maxX = Math.min(100, posicaoAnteriorX + 35);
+    let maxX = Math.min(95, posicaoAnteriorX + 35);
     let novoX = Math.random() * (maxX - minX) + minX;
     posicaoAnteriorX = novoX; // atualiza a posição anterior
 
