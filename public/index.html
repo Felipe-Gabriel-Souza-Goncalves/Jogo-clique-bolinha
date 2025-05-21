@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loja.css">
+    <link rel="stylesheet" href="css/configuracoes.css">
+    <link rel="stylesheet" href="css/comoJogar.css">
+    <link rel="stylesheet" href="css/placar.css">
+    <title>Jogo!</title>
+</head>
+<body>
+    <header>
+        <img class="iconSvg" onclick="closeAll('configuracoes')" src="imagem/menu.svg" alt="menu">
+        <h1>Jogo das Bolinhas!</h1>
+        <img class="iconSvg" onclick="closeAll('comoJogar')" src="imagem/informacoes.svg" alt="informacoes">
+    </header>
+    <hr>
+    <div class="tela">
+        <br><br>
+        <h2>Pontuação:</h2>
+        <br>
+
+        <h2 id="pontuacao">0</h2>
+        <h4 id="maiorPontuacao">Maior pontuacao: 0</h4>
+        <div>
+            <h2 id="gameOver">Fim de Jogo!</h2>
+            <div id="divBtnPrincipal">
+               <a href="#areaDoJogo">
+                <button id="botaoJogar" class="botao" onclick="jogando = true; document.getElementsByClassName('divDificuldade')[0].style.display = 'flex'">
+                    Jogar
+                </button>
+               </a>
+                <button id="botaoReiniciar" class="botao" onclick="reiniciar()">
+                    Reiniciar
+                </button>
+                <button id="botaoLoja" class="botao"
+                    onclick="closeAll('loja')">
+                    Loja
+                </button>
+                <button class="botao" onclick="abrirPlacar()">
+                    Placar
+                </button>
+            </div>
+        </div>
+
+        <!--  -->
+        <div id="areaDoJogo">
+            <div id="bolinha"><img src="" id="imgBola" alt=""></div>
+
+        </div>
+
+
+        <div class="divDificuldade">
+            <button class="botao" id="closeDificuldade" onclick="jogando = false; document.getElementsByClassName('divDificuldade')[0].style.display = 'none'">Fechar</button>
+            <button class="botao" onclick="tempo = 2000;gerenciarTempo(tempo);comecar()">
+                Fácil
+            </button>
+            <button class="botao" onclick="tempo = 1500;gerenciarTempo(tempo);comecar()">
+                Médio
+            </button>
+            <button class="botao" onclick="tempo = 1000;gerenciarTempo(tempo);comecar()">
+                Difícil
+            </button>
+            <button class="botao" onclick="tempo = 800;gerenciarTempo(tempo);comecar()">
+                Extremo
+            </button>
+        </div>
+    </div>
+
+    <div class="loja" id="loja">
+        <h1 style="text-align: end; margin: 20px 50px;" onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
+        
+        <h1>LOJA</h1>
+        <h2>Saldo: <span id="saldo">0</span></h2>
+        <div>
+            <a href="#comprasDesignBolas">Bolas</a> | 
+            <a href="#comprasDesignFundo">Fundos</a>
+        </div>
+
+        <table class="comprasDesignBolas" id="comprasDesignBolas">
+            <tr id="opcoesBolas">   
+                <h1>Bolas:</h1>
+                <hr>
+            </tr>
+        </table>
+        <hr>
+        <table class="comprasDesignFundo" id="comprasDesignFundo">
+            <tr id="opcoesFundos">
+                <h1>Fundo:</h1>
+                <hr>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="configuracoes">
+        <div>
+            <button onclick="closeAll('')">Fechar</button>
+        </div>
+        <div id="divModoEscuro">
+            <label class="switch">
+                <input id="inputModoEscuro" type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <h1>Modo escuro</h1>
+        </div>
+    </div>
+
+    <div id="comoJogar">
+        <button class="botao" onclick="closeAll('')">Fechar</button>
+        <div id="containerGameplay">
+            <div id="gameplay1">
+                <p>Como jogar?</p>
+                <img src="media/clique-bolinha gameplay.gif" width="300" alt="como jogar">
+                <p>Clique no botão de jogar, escolha a dificuldade, e mantenha-se clicando na bolinha como é visto no vídeo!</p>
+            </div>
+            <div id="gameplay2">
+                <p>Configurações</p>
+                <img src="media/clique-bolinha config.gif" width="300" alt="">
+                <p>Apesar de não ter muitas opções (em progresso), é útil para personalizar o seu modo de jogo</p>
+            </div>
+            <div id="gameplay3">
+                <p>Comprar na loja</p>
+                <img src="media/clique-bolinha loja.gif" width="300" alt="comprar na loja">
+                <p>Após atingir determinado saldo, é possível comprar personalizações para a bola e o fundo!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="placar">
+        <button onclick="document.getElementById('placar').style.display = 'none'" class="botao fechar">Fechar</button>
+        <br>
+        <form id="formNickname">
+            <label for="nickname">Insira seu nome de usuário</label><br>
+            <input type="text" id="nickname" placeholder="Insira seu nome de usuário"><br>
+            <button type="submit" class="botao">Confirmar</button>
+        </form>
+        <p id="aviso">É necessário colocar um nome de usuário para participar do placar!</p>
+        <div id="leaderboard">
+        
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/loja.js"></script>
+    <script src="script/configuracao.js"></script>
+    <script src="script/placar.js"></script>
+
+</body>
+</html>

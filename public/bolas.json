@@ -1,0 +1,114 @@
+[
+    {
+        "id": "bolaAzul", 
+        "texto": "Azul", 
+        "cor": "rgba(0, 0, 255, 1)", 
+        "preco": "0", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaAmarela", 
+        "texto": "Amarelo", 
+        "cor": "rgb(255, 255, 0, 1)", 
+        "preco": "5", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaVermelha", 
+        "texto": "Vermelho", 
+        "cor": "rgb(255, 0, 0, 1)", 
+        "preco": "10", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaVerde", 
+        "texto": "Verde", 
+        "cor": "rgb(40, 190, 40)", 
+        "preco": "10", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaRoxa", 
+        "texto": "Roxa", 
+        "cor": "rgb(174, 10, 174)", 
+        "preco": "15", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaLaranja", 
+        "texto": "Laranja", 
+        "cor": "rgb(255, 165, 0)", 
+        "preco": "15", 
+        "tipo": "cor", 
+        "imagem": ""
+    },
+    {
+        "id": "bolaBaseball", 
+        "texto": "Baseball", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaBaseball.png"
+    },
+    {
+        "id": "bolaBasquete", 
+        "texto": "Basquete", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaBasquete.png"
+    },
+    {
+        "id": "bolaBoliche", 
+        "texto": "Boliche", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaBoliche.png"
+    },
+    {
+        "id": "bolaFutebol", 
+        "texto": "Futebol", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaFutebol.png"
+    },
+    {
+        "id": "bolaGolfe", 
+        "texto": "Golfe", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaGolfe.png"
+    },
+    {
+        "id": "bolaSinuca", 
+        "texto": "Sinuca", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaSinuca.png"
+    },
+    {
+        "id": "bolaTennis", 
+        "texto": "Tennis", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaTennis.png"
+    },
+    {
+        "id": "bolaVolei", 
+        "texto": "Vôlei", 
+        "cor": "", 
+        "preco": "30", 
+        "tipo": "imagem", 
+        "imagem": "imagem/bola/bolaVolei.png"
+    }
+]

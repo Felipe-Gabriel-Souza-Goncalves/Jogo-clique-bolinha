@@ -1,0 +1,206 @@
+:root{
+    /* claro - rgb(218, 230, 240) || escuro2 - rgb(34 47 55)*/
+    --corFundo: rgb(34 47 55);
+    /* claro -  rgb(179, 195, 207) || escuro2 - rgb(29, 36, 43) */
+    --corFundoHeader:  rgb(29, 36, 43);
+    /* claro - rgb(0,0,0) || escuro - rgb(255,255,255)  */
+    --corFonte: rgb(255,255,255);
+    /* claro - brightness(0) saturate(100%) || escuro - brightness(0) invert(100%) contrast(100%)*/
+    --filtroSvg: brightness(0) saturate(100%);
+    
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--corFundo);
+    color: var(--corFonte);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: var(--corFundoHeader);
+}
+hr{
+    margin: 0;
+}
+
+.iconSvg{
+    filter: var(--filtroSvg);
+}
+
+
+
+.tela {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.tela > div {
+    justify-content: center;
+}
+
+#divBtnPrincipal{
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.botao {
+    font-size: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: aliceblue;
+    background-color: rgb(26, 35, 66);
+    transition: 0.4s;
+}
+
+.botao:hover {
+    scale: 1.3;
+    background-color: rgb(61, 74, 121);
+}
+
+#areaDoJogo {
+    border-radius: 10px;
+    width: 80%;
+    height: 60vh;
+    background-color: rgb(124, 66, 163);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 1em auto;
+    box-shadow: 0px 5px 15px 0px rgba(102, 102, 102, 0.5);
+}
+
+#bolinha {
+    position: relative;
+    display: none;
+    background-color: rgba(0, 0, 255, 1);
+    margin-left: auto;
+    width: 5vh;
+    height: 5vh;
+    clip-path: circle(50%);
+    transition: ease-out 0.05s;
+}
+
+#bolinha img {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 5.5vh;
+}
+
+#gameOver {
+    color: red;
+    visibility: hidden;
+}
+
+.divDificuldade {
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(7, 18, 57, 0.613);
+    backdrop-filter: blur(5px);
+    gap: 60px;
+}
+
+.divDificuldade button {
+    scale: 1.35;
+    width: 300px;
+    padding: 10px 2px;
+}
+
+#closeDificuldade{
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: fit-content;
+}
+
+.switch {
+    --secondary-container: #4a4a4a;
+    --primary: #d6d6d6;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.7em;
+    height: 1.8em;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #313033;
+    transition: .2s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: #aeaaae;
+    transition: .4s;
+}
+
+input:checked + .slider::before {
+    background-color: var(--primary);
+}
+
+input:checked + .slider {
+    background-color: var(--secondary-container);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-container);
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.9em);
+}
+
+@media (max-width: 600px) {
+    header{
+        padding: 10px 20px;
+    }
+    #divBtnPrincipal{
+        gap: 20px;
+    }
+    #areaDoJogo{
+        width: 90%;
+    }
+}

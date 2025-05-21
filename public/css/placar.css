@@ -1,0 +1,33 @@
+#placar{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    background-color: var(--corFundoHeader);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid rgb(26, 35, 66);
+}
+#formNickname{
+  text-align: center;
+}
+#formNickname input{
+  padding: 5px;
+  border: 1px solid rgb(26, 35, 66);
+  border-radius: 5px;
+  font-size: 1.5em;
+  background-color: rgb(170, 179, 209);
+  color: white;
+}
+#formNickname input::placeholder{
+  color: rgba(255, 255, 255, 0.664);
+}
+.fechar{
+  position: absolute;
+  top: 0;
+  right: 10px;
+}

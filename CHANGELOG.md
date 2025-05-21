@@ -1,4 +1,4 @@
-# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.4.1]
+# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.5]
 &nbsp;
 ## [1.1] Atualização 19/11/2024:
     
@@ -50,3 +50,10 @@
 - Correção de não aparecer o texto de "Selecionar" para os fundos
 - Ajuste para evitar da bola sair do campo do jogo
 - Ajustes leves na responsividade
+
+## [1.5] Atualização 20/05/2025: 
+- Servidor por express
+- Nova função de placar público
+  - Placar é salvo no servidor
+  - Necessário de um nome de usuário
+- Pequenas correções de design
