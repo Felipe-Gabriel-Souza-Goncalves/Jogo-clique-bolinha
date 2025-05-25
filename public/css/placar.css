@@ -1,33 +1,134 @@
 #placar{
     display: none;
     flex-direction: column;
-    justify-content: center;
-    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
     top: 0;
     right: 0;
     width: 40vw;
-    background-color: var(--corFundoHeader);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid rgb(26, 35, 66);
-}
-#formNickname{
-  text-align: center;
-}
-#formNickname input{
-  padding: 5px;
-  border: 1px solid rgb(26, 35, 66);
-  border-radius: 5px;
-  font-size: 1.5em;
-  background-color: rgb(170, 179, 209);
-  color: white;
-}
-#formNickname input::placeholder{
-  color: rgba(255, 255, 255, 0.664);
+    min-width: 500px;
+    max-height: 100vh;
+    overflow: auto;
+    background: url(../imagem/background_placar.png) var(--corFundoHeader);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px 10px 100px;
+    border-left: 1px solid rgb(26, 35, 66);
+    box-sizing: border-box;
 }
 .fechar{
   position: absolute;
   top: 0;
   right: 10px;
 }
+#aviso{
+  background-color: var(--corFundo);
+  color: var(--corFonte);
+  padding: 10px;
+}
+/*  */
+/*  */
+/*  */
+
+#formNickname{
+  text-align: center;
+  background-color: var(--corFundoHeader);
+  padding: 20px 10px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+#formNickname input{
+  padding: 5px;
+  border: 1px solid rgb(26, 35, 66);
+  border-radius: 5px;
+  font-size: 1.5em;
+  background-color: var(--corFundo);
+  color: var(--corFonte);
+}
+#formNickname input::placeholder{
+  color: var(--corFonte);
+  filter: opacity(0.4);
+}
+
+#gridPerfil{
+  margin: 0 auto;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 5px;
+  background-color: var(--corFundo);
+  padding: 10px;
+  width: fit-content;
+}
+#gridPerfil .foto{
+  border: 1px solid white;
+  width: 60px;
+}
+.fotoSelecionada{
+  border: 1px solid blue !important;
+}
+
+/*  */
+/*  */
+/*  */
+#placar table{
+  background-color: #0b1a41;
+  border-collapse: collapse;
+  width: 490px;
+}
+#placar table *{
+  border-collapse: collapse;
+  gap: 0;
+  margin: 0;
+  color: var(--corFonte);
+  background-color: var(--corFundo);
+  box-sizing: border-box;
+}
+thead, tbody, thead td{
+  border: 1px solid black;
+}
+
+#placar tbody tr,
+#placar tbody td{
+  border: 1px solid black;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+thead td{
+  height: 100%;
+}
+
+.linhaPlacar td:nth-of-type(1),
+thead td:nth-of-type(1){
+  width: 20%;
+}
+.linhaPlacar td:nth-of-type(2),
+thead td:nth-of-type(2){
+  width: 10%;
+}
+  .linhaPlacar td:nth-of-type(2) img{
+    width: 50px;
+    height: 50px;
+  }
+.linhaPlacar td:nth-of-type(3),
+thead td:nth-of-type(3){
+  width: 32%;
+}
+.linhaPlacar td:nth-of-type(4),
+thead td:nth-of-type(4){
+  width: 18%;
+}
+.linhaPlacar td:nth-of-type(5),
+thead td:nth-of-type(5){
+  width: 20%;
+}
+

@@ -3,9 +3,10 @@ const socket = io();
 const bolinha = document.getElementById("bolinha")
 const maiorPontuacao = document.getElementById("maiorPontuacao")
 const elementPontuacao = document.getElementById("pontuacao")
+const fotoSelecionada = document.getElementsByClassName("fotoSelecionada")
+
 let jogando = false
 let marcou = true
-
 let pontuacao = 0
 var jaAcicionou = false
 var tempo = 1500
@@ -13,6 +14,19 @@ let dificuldade = "Médio"
 var intervalo;
 var saldo = 0
 let jogador = null
+let indexPerfil = undefined
+var posicaoAnteriorX = 50; 
+var ftPerfil = ["/imagem/ftPerfil/defensor_esterco.png",
+                "/imagem/ftPerfil/falso_cavaleiro.webp",
+                "/imagem/ftPerfil/knight.png",
+                "/imagem/ftPerfil/lordes_louva_deus.png",
+                "/imagem/ftPerfil/receptaculo_quebrado.png",
+                "/imagem/ftPerfil/sentinela.webp",
+                "/imagem/ftPerfil/xero.webp",
+                "/imagem/ftPerfil/colmeia.webp",
+                "/imagem/ftPerfil/domador_deuses.webp"]
+
+
 
 if(localStorage.getItem("saldo") !=null){
     saldo = parseInt(localStorage.getItem("saldo"))
@@ -70,8 +84,10 @@ function pegarMaiorPontuacao(){
 }
 
 function comecar(){
+    pontuacao = 0
     document.getElementsByClassName("divDificuldade")[0].style.display = "none"
     document.getElementById("loja").style.display = "none"
+    document.getElementById("placar").style.display = "none"
     if(jogando == true){
         marcou = true
         intervalo = setInterval(gerarBola, tempo)
@@ -79,12 +95,10 @@ function comecar(){
     } 
 }
 
-let posicaoAnteriorX = 50; 
 
 function gerarBola() {
-    console.log(tempo)
     bolinha.style.filter = "invert(0)";
-    elementPontuacao.style.color = 'black';
+    elementPontuacao.style.color = 'var(--corFonte)';
     elementPontuacao.innerHTML = pontuacao;
 
     document.getElementById("gameOver").style.visibility = 'hidden';
@@ -120,8 +134,8 @@ bolinha.addEventListener("click", ()=>{
 })
 
 function perder(){
-    if(jogador != null){
-        socket.emit('chat message', { jogador, pontuacao, dificuldade });
+    if(jogador != null && pontuacao != 0){
+        socket.emit('chat message', { jogador, pontuacao, dificuldade, indexPerfil});
     }
 
     if(pontuacao >= parseInt(localStorage.getItem("maiorPontuacao"))){
@@ -151,6 +165,17 @@ function contarPontuacao(){
 
 function reiniciar(){
     location.reload()
+}
+
+function mudarPerfil(index){
+    console.log(index)
+    indexPerfil = index
+
+    for(let j = fotoSelecionada.length -1; j > -1; j--){
+        fotoSelecionada[j].classList.remove("fotoSelecionada")
+    }
+
+    document.getElementsByClassName("foto")[index].classList.add("fotoSelecionada")
 }
 
 pegarMaiorPontuacao()

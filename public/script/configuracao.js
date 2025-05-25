@@ -1,17 +1,26 @@
 const root = document.querySelector(":root")
 
-if(sessionStorage.getItem("modoEscuro") == "true"){
-    document.getElementById("inputModoEscuro").checked = true
-    tornarModoEscuro()
-} else{
+if(sessionStorage.getItem("modoEscuro") == "false"){
     tornarModoClaro()
+    document.getElementById("inputModoEscuro").checked = false
+} else{
+    tornarModoEscuro()
+    document.getElementById("inputModoEscuro").checked = true
 }
+
 
 function toggleModoEscuro(){
     if(document.getElementById("inputModoEscuro").checked == true){
         tornarModoEscuro()
     } else{
         tornarModoClaro()
+    }
+}
+function toggleTransicao(){
+    if(document.getElementById("inputTransicao").checked == true){
+        document.getElementById("bolinha").style.transition = "ease-out 0.05s"
+    } else{
+        document.getElementById("bolinha").style.transition = "none"
     }
 }
 function tornarModoEscuro(){
@@ -44,3 +53,4 @@ function closeAll(id){
 }
 
 document.getElementById("inputModoEscuro").addEventListener("change", toggleModoEscuro)
+document.getElementById("inputTransicao").addEventListener("change", toggleTransicao)

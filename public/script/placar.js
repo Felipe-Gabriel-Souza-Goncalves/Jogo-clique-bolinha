@@ -10,7 +10,7 @@ document.querySelector("#formNickname").addEventListener("submit", e =>{
     document.getElementById("aviso").style.display = "none"
   }
 
-
+  document.querySelector("#formNickname").style.display = "none"
 })
 
 function abrirPlacar(){
@@ -36,9 +36,33 @@ async function carregarPlacar() {
         leaderboard.innerHTML = "";
 
         dados.forEach((item, index) => {
-            const p = document.createElement("p");
-            p.innerText = `${index + 1} - Jogador ${item.jogador} marcou ${item.pontuacao} na dificuldade: ${item.dificuldade}!`;
-            leaderboard.appendChild(p);
+          if(item.foto == undefined){
+            item.foto = 2
+          } 
+
+          const tr = document.createElement("tr")
+          tr.classList.add("linhaPlacar")
+          tr.innerHTML = `
+            <td>
+              ${index+1}
+            </td>
+            <td>
+              <img src='${ftPerfil[item.foto]}' alt='foto'>
+            </td>
+            <td>
+              ${item.jogador}
+            </td>
+            <td>
+              ${item.pontuacao}
+            </td>
+            <td>
+              ${item.dificuldade}
+            </td>
+          `
+
+            // const p = document.createElement("p");
+            // p.innerText = `${index + 1} - Jogador ${item.jogador} marcou ${item.pontuacao} na dificuldade: ${item.dificuldade}!`;
+            leaderboard.appendChild(tr);
         });
     } catch (error) {
         console.error('Erro ao carregar placar:', error);

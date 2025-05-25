@@ -4,16 +4,26 @@
     position: fixed;
     z-index: 3;
     top: 0;
+    right: 0;
     width: 45vw;
     height: 100vh;
-    background-color: rgba(153, 164, 202, 0.781);
+    /* background-color: rgba(153, 164, 202, 0.781); */
+    background: url(../imagem/background_loja.png) rgba(153, 164, 202, 0.781);
+    background-size: cover;
     backdrop-filter: blur(10px);
     text-align: center;
     gap: 60px;
-    margin-left: 55%;
-    margin-bottom: 100%;
     overflow-y: auto;
     scroll-behavior: smooth;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+#lojaHeader{
+    background-color: rgba(0, 0, 0, 0.822);
+    padding: 20px 0;
+}
+#lojaHeader:first-child{
+    margin: 0;
 }
 .loja div a, .loja div{
     font-size: 1.2em;
@@ -24,9 +34,12 @@
         color: rgb(202, 255, 252);
     }
 
-table tr:first-child{
-    padding: 50px 0px;
+#loja h1:not(#lojaHeader h1){
+    background-color: rgba(0, 0, 0, 0.822);
+    padding: 30px 0px;
+    margin: 0;
 }
+
 table *{
     text-align: center;
 }
@@ -113,76 +126,6 @@ div .botao{
     width: 200px;
     height: 120px;
 }
-
-/* produtos */
-/* #bolaAzul{
-    background-color: rgb(0, 0, 255);
-}
-#bolaAmarela{
-    background-color: rgb(255, 255, 0);
-}
-#bolaVermelha{
-    background-color: rgb(255, 0, 0);
-}
-#bolaVerde{
-    background-color: rgb(40, 190, 40);
-}
-#bolaRoxa{
-    background-color: rgb(174, 10, 174);
-}
-#bolaLaranja{
-    background-color: rgb(255, 165, 0);
-} */
-/* ------------------------ */
-/* #bolaBaseball{
-    background-image: url("../imagem/bola/bolaBaseball.png");   
-}
-#bolaBasquete{
-    background-image: url("../imagem/bola/bolaBasquete.png");
-}
-#bolaBoliche{
-    background-image: url("../imagem/bola/bolaBoliche.png");
-}
-#bolaFutebol{
-    background-image: url("../imagem/bola/bolaFutebol.png");
-}
-#bolaGolfe{
-    background-image: url("../imagem/bola/bolaGolfe.png");
-}
-#bolaSinuca{
-    background-image: url("../imagem/bola/bolaSinuca.png");
-}
-#bolaTennis{
-    background-image: url("../imagem/bola/bolaTennis.png");
-}
-#bolaVolei{
-    background-image: url("../imagem/bola/bolaVolei.png");
-} */
-/* ------------------------ */
-/* ------------------------ */
-/* #fundoDia{
-    background-image: url("../imagem/fundo/fundo_dia.jpg");
-}
-#fundoNoite{
-    background-image: url("../imagem/fundo/fundo_noite.png");
-
-}
-#fundoXadrez{
-    background-image: url("../imagem/fundo/fundo_xadrez.jpg");
-
-}
-#fundoFutebol{
-    background-image: url("../imagem/fundo/fundo_campo-futebol.png");
-
-}
-#fundoBasquete{
-    background-image: url("../imagem/fundo/fundo_quadra-basquete.png");
-
-}
-#fundoTennis{
-    background-image: url("../imagem/fundo/fundo_quadra-de-tenis.jpg");
-
-} */
 
 @media (max-width: 500px) {
     .loja{

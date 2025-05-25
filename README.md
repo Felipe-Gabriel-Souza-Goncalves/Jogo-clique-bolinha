@@ -1,7 +1,7 @@
 # 🔴 Jogo clique bolinha
 
 ## 🌐 Link do site:
-https://jogo-clique-bolinha.onrender.com/
+<!-- https://felipe-gabriel-souza-goncalves.github.io/Jogo-clique-bolinha/ -->
 
 ## ✏️ Descrição:
 **Clique para jogar e então mantenha-se clicando na bola antes do tempo acabar para não perder!**
@@ -19,6 +19,9 @@ https://jogo-clique-bolinha.onrender.com/
     - Difícil: 0,85s;
     - Extremo: 0,575s;
 - Escolha de personalização da bola/área de jogo
+- Placar em tempo real
+- Seção de "como jogar"
+- Configurações de jogo
 
 ## 📁 Outros arquivos:
 -[Atualizações do projeto](CHANGELOG.md)

@@ -57,3 +57,11 @@
   - Placar é salvo no servidor
   - Necessário de um nome de usuário
 - Pequenas correções de design
+
+## [1.6] Atualização 25/05/2025 (edição HK):
+- Melhorias no placar
+- Design adaptado para edição do jogo Hollow Knight
+- Correção de bugs no placar
+- Implementação de fotos pré definidas para os usuários
+- Opção de desativar a transição da bola
+- Por padrão o jogo está em modo escuro

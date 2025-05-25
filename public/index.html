@@ -18,9 +18,7 @@
     </header>
     <hr>
     <div class="tela">
-        <br><br>
         <h2>Pontuação:</h2>
-        <br>
 
         <h2 id="pontuacao">0</h2>
         <h4 id="maiorPontuacao">Maior pontuacao: 0</h4>
@@ -70,14 +68,16 @@
     </div>
 
     <div class="loja" id="loja">
-        <h1 style="text-align: end; margin: 20px 50px;" onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
-        
-        <h1>LOJA</h1>
-        <h2>Saldo: <span id="saldo">0</span></h2>
-        <div>
-            <a href="#comprasDesignBolas">Bolas</a> | 
-            <a href="#comprasDesignFundo">Fundos</a>
-        </div>
+        <section id="lojaHeader">
+            <h1 style="text-align: end; margin: 0px 50px;" onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
+            
+            <h1>LOJA</h1>
+            <h2>Saldo: <span id="saldo">0</span></h2>
+            <div id="lojaSecao">
+                <a href="#comprasDesignBolas">Bolas</a> | 
+                <a href="#comprasDesignFundo">Fundos</a>
+            </div>
+        </section>
 
         <table class="comprasDesignBolas" id="comprasDesignBolas">
             <tr id="opcoesBolas">   
@@ -100,10 +100,17 @@
         </div>
         <div id="divModoEscuro">
             <label class="switch">
-                <input id="inputModoEscuro" type="checkbox">
+                <input id="inputModoEscuro" type="checkbox" checked>
                 <span class="slider"></span>
             </label>
             <h1>Modo escuro</h1>
+        </div>
+        <div id="divTransicao">
+            <label class="switch">
+                <input id="inputTransicao" type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <h1>Transição da bola</h1>
         </div>
     </div>
 
@@ -135,10 +142,44 @@
             <label for="nickname">Insira seu nome de usuário</label><br>
             <input type="text" id="nickname" placeholder="Insira seu nome de usuário"><br>
             <button type="submit" class="botao">Confirmar</button>
+
+            <div id="gridPerfil">
+                <img onclick="mudarPerfil(0)" src="/imagem/ftPerfil/defensor_esterco.png" alt="defensor_esterco" class="foto">
+                <img onclick="mudarPerfil(1)" src="/imagem/ftPerfil/falso_cavaleiro.webp" alt="falso_cavaleiro" class="foto">
+                <img onclick="mudarPerfil(2)" src="/imagem/ftPerfil/knight.png" alt="knight" class="foto">
+                <img onclick="mudarPerfil(3)" src="/imagem/ftPerfil/lordes_louva_deus.png" alt="lordes_louva_deus" class="foto">
+                <img onclick="mudarPerfil(4)" src="/imagem/ftPerfil/receptaculo_quebrado.png" alt="receptaculo_quebrado" class="foto">
+                <img onclick="mudarPerfil(5)" src="/imagem/ftPerfil/sentinela.webp" alt="sentinela" class="foto">
+                <img onclick="mudarPerfil(6)" src="/imagem/ftPerfil/xero.webp" alt="xero" class="foto">
+                <img onclick="mudarPerfil(7)" src="/imagem/ftPerfil/colmeia.webp" alt="colmeia" class="foto">
+                <img onclick="mudarPerfil(8)" src="/imagem/ftPerfil/domador_deuses.webp" alt="domador_deuses" class="foto">
+
+            </div>
         </form>
         <p id="aviso">É necessário colocar um nome de usuário para participar do placar!</p>
-        <div id="leaderboard">
-        
+        <div>
+            <table>
+                <thead>
+                    <td>
+                        Colocação    
+                    </td>
+                    <td>
+                        Foto    
+                    </td>
+                    <td>
+                        Jogador
+                    </td>
+                    <td>
+                        Pontuação
+                    </td>
+                    <td>
+                        Dificuldade
+                    </td>
+                </thead>
+                <tbody id="leaderboard">
+
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -146,7 +187,7 @@
     <script src="script/script.js"></script>
     <script src="script/loja.js"></script>
     <script src="script/configuracao.js"></script>
-    <script src="script/placar.js"></script>
+    <script defer src="script/placar.js"></script>
 
 </body>
 </html>

@@ -3,8 +3,8 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(153, 164, 202, 0.781);
-    backdrop-filter: blur(5px);
+    background-color: rgba(var(--corFundo) 0.5);
+    backdrop-filter: blur(5px) opacity(0.9);
     display: none;
     overflow-y: auto;
 }
@@ -32,6 +32,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--corFundo);
+    color: var(--corFonte);
 }
 #gameplay1 video,
 #gameplay2 video,
