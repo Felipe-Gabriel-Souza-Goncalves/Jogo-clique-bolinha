@@ -5,6 +5,7 @@ const maiorPontuacao = document.getElementById("maiorPontuacao")
 const elementPontuacao = document.getElementById("pontuacao")
 const fotoSelecionada = document.getElementsByClassName("fotoSelecionada")
 
+let gerados = 0
 let jogando = false
 let marcou = true
 let pontuacao = 0
@@ -85,6 +86,7 @@ function pegarMaiorPontuacao(){
 
 function comecar(){
     pontuacao = 0
+    gerados = 0
     document.getElementsByClassName("divDificuldade")[0].style.display = "none"
     document.getElementById("loja").style.display = "none"
     document.getElementById("placar").style.display = "none"
@@ -97,6 +99,8 @@ function comecar(){
 
 
 function gerarBola() {
+    socket.emit('atualizar verificador')
+    console.log(gerados)
     bolinha.style.filter = "invert(0)";
     elementPontuacao.style.color = 'var(--corFonte)';
     elementPontuacao.innerHTML = pontuacao;
@@ -105,6 +109,7 @@ function gerarBola() {
     
     if (!marcou) {
         perder();
+        console.log(gerados)
         return;
     }
 
