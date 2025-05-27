@@ -139,6 +139,7 @@ hr, br{
     top: 0;
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -169,8 +170,14 @@ hr, br{
     }
     #divBtnPrincipal{
         gap: 20px;
+        box-sizing: border-box;
+        padding: 0 1em;
     }
     #areaDoJogo{
         width: 90%;
+    }
+    .tela{
+        width: 100vw;
+        padding: 10px 0px;
     }
 }

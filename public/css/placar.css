@@ -78,6 +78,7 @@
   background-color: #0b1a41;
   border-collapse: collapse;
   width: 490px;
+  max-width: 100%;
 }
 #placar table *{
   border-collapse: collapse;
@@ -109,7 +110,7 @@ thead td{
 
 .linhaPlacar td:nth-of-type(1),
 thead td:nth-of-type(1){
-  width: 20%;
+  width: 10%;
 }
 .linhaPlacar td:nth-of-type(2),
 thead td:nth-of-type(2){
@@ -121,7 +122,8 @@ thead td:nth-of-type(2){
   }
 .linhaPlacar td:nth-of-type(3),
 thead td:nth-of-type(3){
-  width: 32%;
+  width: 42%;
+  flex-shrink: 2;
 }
 .linhaPlacar td:nth-of-type(4),
 thead td:nth-of-type(4){
@@ -132,3 +134,13 @@ thead td:nth-of-type(5){
   width: 20%;
 }
 
+@media (max-width: 600px) {
+  #placar{
+    width: 100vw;
+    max-width: 100vw;
+    padding: 30px 3px;
+  }
+  #placar table{
+    width: 100vw;
+  }
+}

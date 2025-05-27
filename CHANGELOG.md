@@ -65,3 +65,7 @@
 - Implementação de fotos pré definidas para os usuários
 - Opção de desativar a transição da bola
 - Por padrão o jogo está em modo escuro
+
+## [1.6.1] Correção 26/05/2025:
+- Correção de responsividade
+- Salvar configuração de transição em sessionStorage

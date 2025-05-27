@@ -8,6 +8,11 @@ if(sessionStorage.getItem("modoEscuro") == "false"){
     document.getElementById("inputModoEscuro").checked = true
 }
 
+if(sessionStorage.getItem("transicaoBola") == "false"){
+    document.getElementById("inputTransicao").checked = false
+} else{
+    document.getElementById("inputTransicao").checked = true
+}
 
 function toggleModoEscuro(){
     if(document.getElementById("inputModoEscuro").checked == true){
@@ -18,8 +23,10 @@ function toggleModoEscuro(){
 }
 function toggleTransicao(){
     if(document.getElementById("inputTransicao").checked == true){
+        sessionStorage.setItem("transicaoBola", "true")
         document.getElementById("bolinha").style.transition = "ease-out 0.05s"
     } else{
+        sessionStorage.setItem("transicaoBola", "false")
         document.getElementById("bolinha").style.transition = "none"
     }
 }

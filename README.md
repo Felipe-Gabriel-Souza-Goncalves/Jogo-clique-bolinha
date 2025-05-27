@@ -2,7 +2,6 @@
 
 ## 🌐 Link do site:
 https://jogo-clique-bolinha.onrender.com/
-<!-- https://felipe-gabriel-souza-goncalves.github.io/Jogo-clique-bolinha/ -->
 
 ## ✏️ Descrição:
 **Clique para jogar e então mantenha-se clicando na bola antes do tempo acabar para não perder!**

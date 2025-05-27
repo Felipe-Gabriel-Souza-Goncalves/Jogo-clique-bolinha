@@ -127,9 +127,15 @@ div .botao{
     height: 120px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .loja{
         width: 100vw;
         margin-left: 0;
+    }
+    .opcaoFundo{
+        width: 190px;
+    }
+    .opcaoContainer{
+        margin: 10px 2px !important;
     }
 }
