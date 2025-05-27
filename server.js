@@ -8,6 +8,8 @@ const io = new Server(server);
 
 const PLACAR_PATH = './placar.json';
 
+let verificadores = {}
+
 app.use(express.static('public')); // ajuste conforme sua pasta de frontend
 
 // Garante que o arquivo exista
@@ -18,7 +20,19 @@ if (!fs.existsSync(PLACAR_PATH)) {
 io.on('connection', (socket) => {
     console.log('Um jogador se conectou');
 
+    verificadores[socket.id] = 0
+
+    socket.on('atualizar verificador', () =>{
+      verificadores[socket.id]++  
+    })
+
     socket.on('chat message', (dados) => {
+
+        if(verificadores[socket.id] - dados.pontuacao !== 2){
+            console.log("Jogador "+ dados.jogador + " teve uma pontuação incoerente com sua partida!")
+            verificadores[socket.id] = 0
+            return
+        }
 
         // Lê placar atual
         fs.readFile(PLACAR_PATH, 'utf8', (err, data) => {
@@ -38,7 +52,8 @@ io.on('connection', (socket) => {
                 jogador: dados.jogador,
                 pontuacao: dados.pontuacao,
                 dificuldade: dados.dificuldade,
-                foto: dados.indexPerfil
+                foto: dados.indexPerfil,
+                rodadas: dados.gerados
             });
 
             // Ordena e limita os 10 melhores
@@ -58,6 +73,8 @@ io.on('connection', (socket) => {
             io.emit('atualizar placar', placar);
         });
     });
+
+
 });
 
 app.get('/placar', (req, res) => {
