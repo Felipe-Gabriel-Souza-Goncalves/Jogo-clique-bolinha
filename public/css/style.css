@@ -52,8 +52,6 @@ hr, br{
     rotate: 12deg;
 }
 
-
-
 .tela {
     box-sizing: border-box;
     display: flex;
@@ -97,6 +95,18 @@ hr, br{
     scale: 1.3;
     background-color: rgb(61, 74, 121);
 }
+#botaoJogar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.botao:disabled{
+    background-color: rgb(43, 64, 138);
+    color: rgb(196, 196, 196);
+}
+.botao:disabled:hover{
+    scale: 1;
+}
+
 
 #areaDoJogo {
     border-radius: 10px;
@@ -106,7 +116,6 @@ hr, br{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     margin: 1em auto;
     box-shadow: 0px 5px 15px 0px rgba(102, 102, 102, 0.5);
 }
@@ -160,7 +169,6 @@ hr, br{
     right: 30px;
     width: fit-content;
 }
-
 
 
 

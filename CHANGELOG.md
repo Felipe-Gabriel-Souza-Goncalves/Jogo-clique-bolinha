@@ -72,3 +72,14 @@
 
 ## [1.6.2] Correção de segurança 27/05/2025
 - Medidas de prevenção de burlar a pontuação
+
+## [1.7] Correção 27/05/2025
+### ATUALIZAÇÃO
+- Placar para até 40 colocações
+- Novas seções de placar referente a dificuldade
+### CORREÇÕES
+- Nome inválido
+- Imagens desproporcionais no campo do jogo
+- Pontuação não enviando
+- Botão de fechar do placar transbordando
+- Botão de jogar agora fica desativado durante a partida

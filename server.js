@@ -22,15 +22,16 @@ io.on('connection', (socket) => {
 
     verificadores[socket.id] = 0
 
-    socket.on('atualizar verificador', () =>{
-      verificadores[socket.id]++  
-    })
+    socket.on('restart verificador', () =>{verificadores[socket.id] = 0;console.log("Verificador reiniciado")})
+
+    socket.on('atualizar verificador', () =>{verificadores[socket.id]++})
+
+    socket.on('disconnect', () =>{delete verificadores[socket.id]})
 
     socket.on('chat message', (dados) => {
 
         if(verificadores[socket.id] - dados.pontuacao !== 2){
-            console.log("Jogador "+ dados.jogador + " teve uma pontuação incoerente com sua partida!")
-            verificadores[socket.id] = 0
+            console.log("Jogador "+ dados.jogador + " teve uma pontuação incoerente com sua partida!" + verificadores[socket.id] + dados.pontuacao)
             return
         }
 
@@ -58,7 +59,7 @@ io.on('connection', (socket) => {
 
             // Ordena e limita os 10 melhores
             placar.sort((a, b) => b.pontuacao - a.pontuacao);
-            placar = placar.slice(0, 10);
+            placar = placar.slice(0, 40);
 
             // Salva novamente no arquivo
             fs.writeFile(PLACAR_PATH, JSON.stringify(placar, null, 2), (err) => {

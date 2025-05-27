@@ -14,10 +14,10 @@ https://jogo-clique-bolinha.onrender.com/
     - Difícil: 1seg;
     - Extremo: 0,8seg;     
     ### (Mobile):
-    - Fácil: 1,65s;
-    - Médio: 1,2s;
-    - Difícil: 0,85s;
-    - Extremo: 0,575s;
+    - Fácil: 1,5s;
+    - Médio: 1,075s;
+    - Difícil: 0,775s;
+    - Extremo: 0,5s;
 - Escolha de personalização da bola/área de jogo
 - Placar em tempo real
 - Seção de "como jogar"

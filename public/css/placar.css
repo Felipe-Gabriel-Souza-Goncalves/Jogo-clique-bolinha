@@ -7,7 +7,7 @@
     top: 0;
     right: 0;
     width: 40vw;
-    min-width: 500px;
+    min-width: 530px;
     max-height: 100vh;
     overflow: auto;
     background: url(../imagem/background_placar.png) var(--corFundoHeader);
@@ -20,7 +20,7 @@
 .fechar{
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
 }
 #aviso{
   background-color: var(--corFundo);
@@ -71,6 +71,31 @@
   border: 1px solid blue !important;
 }
 
+/*  */
+/*  */
+/*  */
+#placarDispositivo{
+  box-sizing: border-box;
+  background-color: var(--corFundoHeader);
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#placarDispositivo .botao{
+  margin: 0;
+  border-radius: 10px;
+}
+#placarDificuldade{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  padding: 5px 0px;
+}
 /*  */
 /*  */
 /*  */

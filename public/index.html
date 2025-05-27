@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css/placar.css">
     <title>Jogo!</title>
 </head>
+
 <body>
     <header>
         <img class="iconSvg" onclick="closeAll('configuracoes')" src="imagem/menu.svg" alt="menu">
@@ -25,21 +27,22 @@
         <div>
             <h2 id="gameOver">Fim de Jogo!</h2>
             <div id="divBtnPrincipal">
-               <a href="#areaDoJogo">
-                <button id="botaoJogar" class="botao" onclick="jogando = true; document.getElementsByClassName('divDificuldade')[0].style.display = 'flex'">
-                    Jogar
-                </button>
-               </a>
-                <button id="botaoReiniciar" class="botao" onclick="reiniciar()">
-                    Reiniciar
-                </button>
-                <button id="botaoLoja" class="botao"
-                    onclick="closeAll('loja')">
-                    Loja
-                </button>
-                <button class="botao" onclick="abrirPlacar()">
-                    Placar
-                </button>
+
+              <button id="botaoJogar" class="botao"
+                  onclick="jogando = true; document.getElementsByClassName('divDificuldade')[0].style.display = 'flex'">
+                  <a href="#areaDoJogo">
+                      Jogar
+                  </a>
+              </button>
+              <button id="botaoReiniciar" class="botao" onclick="reiniciar()">
+                  Reiniciar
+              </button>
+              <button id="botaoLoja" class="botao" onclick="closeAll('loja')">
+                  Loja
+              </button>
+              <button class="botao" onclick="abrirPlacar()">
+                  Placar
+              </button>
             </div>
         </div>
 
@@ -52,7 +55,8 @@
     </div>
 
     <div class="divDificuldade">
-        <button class="botao" id="closeDificuldade" onclick="jogando = false; document.getElementsByClassName('divDificuldade')[0].style.display = 'none'">Fechar</button>
+        <button class="botao" id="closeDificuldade"
+            onclick="jogando = false; document.getElementsByClassName('divDificuldade')[0].style.display = 'none'">Fechar</button>
         <button class="botao" onclick="tempo = 2000;gerenciarTempo(tempo);comecar()">
             Fácil
         </button>
@@ -70,18 +74,19 @@
 
     <div class="loja" id="loja">
         <section id="lojaHeader">
-            <h1 style="text-align: end; margin: 0px 50px;" onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
-            
+            <h1 style="text-align: end; margin: 0px 50px;"
+                onclick="document.getElementsByClassName('loja')[0].style.display = 'none'">X</h1>
+
             <h1>LOJA</h1>
             <h2>Saldo: <span id="saldo">0</span></h2>
             <div id="lojaSecao">
-                <a href="#comprasDesignBolas">Bolas</a> | 
+                <a href="#comprasDesignBolas">Bolas</a> |
                 <a href="#comprasDesignFundo">Fundos</a>
             </div>
         </section>
 
         <table class="comprasDesignBolas" id="comprasDesignBolas">
-            <tr id="opcoesBolas">   
+            <tr id="opcoesBolas">
                 <h1>Bolas:</h1>
                 <hr>
             </tr>
@@ -94,7 +99,7 @@
             </tr>
         </table>
     </div>
-    
+
     <div id="configuracoes">
         <div>
             <button onclick="closeAll('')">Fechar</button>
@@ -121,7 +126,8 @@
             <div id="gameplay1">
                 <p>Como jogar?</p>
                 <img src="media/clique-bolinha gameplay.gif" width="300" alt="como jogar">
-                <p>Clique no botão de jogar, escolha a dificuldade, e mantenha-se clicando na bolinha como é visto no vídeo!</p>
+                <p>Clique no botão de jogar, escolha a dificuldade, e mantenha-se clicando na bolinha como é visto no
+                    vídeo!</p>
             </div>
             <div id="gameplay2">
                 <p>Configurações</p>
@@ -145,27 +151,45 @@
             <button type="submit" class="botao">Confirmar</button>
 
             <div id="gridPerfil">
-                <img onclick="mudarPerfil(0)" src="/imagem/ftPerfil/defensor_esterco.png" alt="defensor_esterco" class="foto">
-                <img onclick="mudarPerfil(1)" src="/imagem/ftPerfil/falso_cavaleiro.webp" alt="falso_cavaleiro" class="foto">
+                <img onclick="mudarPerfil(0)" src="/imagem/ftPerfil/defensor_esterco.png" alt="defensor_esterco"
+                    class="foto">
+                <img onclick="mudarPerfil(1)" src="/imagem/ftPerfil/falso_cavaleiro.webp" alt="falso_cavaleiro"
+                    class="foto">
                 <img onclick="mudarPerfil(2)" src="/imagem/ftPerfil/knight.png" alt="knight" class="foto">
-                <img onclick="mudarPerfil(3)" src="/imagem/ftPerfil/lordes_louva_deus.png" alt="lordes_louva_deus" class="foto">
-                <img onclick="mudarPerfil(4)" src="/imagem/ftPerfil/receptaculo_quebrado.png" alt="receptaculo_quebrado" class="foto">
+                <img onclick="mudarPerfil(3)" src="/imagem/ftPerfil/lordes_louva_deus.png" alt="lordes_louva_deus"
+                    class="foto">
+                <img onclick="mudarPerfil(4)" src="/imagem/ftPerfil/receptaculo_quebrado.png" alt="receptaculo_quebrado"
+                    class="foto">
                 <img onclick="mudarPerfil(5)" src="/imagem/ftPerfil/sentinela.webp" alt="sentinela" class="foto">
                 <img onclick="mudarPerfil(6)" src="/imagem/ftPerfil/xero.webp" alt="xero" class="foto">
                 <img onclick="mudarPerfil(7)" src="/imagem/ftPerfil/colmeia.webp" alt="colmeia" class="foto">
-                <img onclick="mudarPerfil(8)" src="/imagem/ftPerfil/domador_deuses.webp" alt="domador_deuses" class="foto">
+                <img onclick="mudarPerfil(8)" src="/imagem/ftPerfil/domador_deuses.webp" alt="domador_deuses"
+                    class="foto">
 
             </div>
         </form>
         <p id="aviso">É necessário colocar um nome de usuário para participar do placar!</p>
         <div>
+            <div id="placarDispositivo">
+                <button class="botao" disabled>Mobile</button>
+                <button class="botao" disabled>Desktop</button>
+                <span>Em progresso!</span>
+            </div>
+            <div id="placarDificuldade">
+                <button class="botao" onclick="carregarPlacar('Fácil')">Fácil</button>
+                <button class="botao" onclick="carregarPlacar('Médio')">Médio</button>
+                <button class="botao" onclick="carregarPlacar('Difícil')">Difícil</button>
+                <button class="botao" onclick="carregarPlacar('Extremo')">Extremo</button>
+                <button class="botao" onclick="carregarPlacar()">Geral</button>
+            </div>
+
             <table>
                 <thead>
                     <td>
                         &nbsp;
                     </td>
                     <td>
-                        Foto    
+                        Foto
                     </td>
                     <td>
                         Jogador
@@ -191,4 +215,5 @@
     <script defer src="script/placar.js"></script>
 
 </body>
+
 </html>

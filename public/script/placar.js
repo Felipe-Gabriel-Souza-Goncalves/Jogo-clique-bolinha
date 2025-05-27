@@ -8,8 +8,12 @@ document.querySelector("#formNickname").addEventListener("submit", e =>{
     jogador = document.getElementById("nickname").value.trim()
     document.getElementById("nickname").disabled = true
     document.getElementById("aviso").style.display = "none"
+  } else{
+    console.log("Nome inválido")
+    return
   }
 
+  
   document.querySelector("#formNickname").style.display = "none"
 })
 
@@ -27,7 +31,7 @@ function filtrarPontuacoes(){
 }
 
 
-async function carregarPlacar() {
+async function carregarPlacar(dificuldade = "geral") {
     try {
         const resposta = await fetch('/placar');
         const dados = await resposta.json();
@@ -35,34 +39,35 @@ async function carregarPlacar() {
         const leaderboard = document.getElementById("leaderboard");
         leaderboard.innerHTML = "";
 
+        let colocacao = 1
         dados.forEach((item, index) => {
           if(item.foto == undefined){
             item.foto = 2
           } 
-
-          const tr = document.createElement("tr")
-          tr.classList.add("linhaPlacar")
-          tr.innerHTML = `
-            <td>
-              ${index+1}
-            </td>
-            <td>
-              <img src='${ftPerfil[item.foto]}' alt='foto'>
-            </td>
-            <td>
-              ${item.jogador}
-            </td>
-            <td>
-              ${item.pontuacao}
-            </td>
-            <td>
-              ${item.dificuldade}
-            </td>
-          `
-
-            // const p = document.createElement("p");
-            // p.innerText = `${index + 1} - Jogador ${item.jogador} marcou ${item.pontuacao} na dificuldade: ${item.dificuldade}!`;
+          if(item.dificuldade == dificuldade || dificuldade == "geral"){
+            const tr = document.createElement("tr")
+            tr.classList.add("linhaPlacar")
+            tr.innerHTML = `
+              <td>
+                ${colocacao}º-
+              </td>
+              <td>
+                <img src='${ftPerfil[item.foto]}' alt='foto'>
+              </td>
+              <td>
+                ${item.jogador}
+              </td>
+              <td>
+                ${item.pontuacao}
+              </td>
+              <td>
+                ${item.dificuldade}
+              </td>
+            `
             leaderboard.appendChild(tr);
+
+            colocacao++
+          }
         });
     } catch (error) {
         console.error('Erro ao carregar placar:', error);

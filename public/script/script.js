@@ -5,7 +5,10 @@ const maiorPontuacao = document.getElementById("maiorPontuacao")
 const elementPontuacao = document.getElementById("pontuacao")
 const fotoSelecionada = document.getElementsByClassName("fotoSelecionada")
 
-let gerados = 0
+const config = {
+
+}
+
 let jogando = false
 let marcou = true
 let pontuacao = 0
@@ -58,16 +61,16 @@ function gerenciarTempo(param){
     if(window.innerWidth < 700){
         switch (param) {
             case 2000:
-                tempo = 1650
+                tempo = 1500
                 break;
             case 1500:
-                tempo = 1200
+                tempo = 1075
                 break;
             case 1000:
-                tempo = 850
+                tempo = 775
                 break;
             case 800:
-                tempo = 575
+                tempo = 500
                 break;
             default:
                 alert("como você fez isso?")
@@ -93,14 +96,13 @@ function comecar(){
     if(jogando == true){
         marcou = true
         intervalo = setInterval(gerarBola, tempo)
-
     } 
+    document.getElementById("botaoJogar").disabled = true
 }
 
 
 function gerarBola() {
     socket.emit('atualizar verificador')
-    console.log(gerados)
     bolinha.style.filter = "invert(0)";
     elementPontuacao.style.color = 'var(--corFonte)';
     elementPontuacao.innerHTML = pontuacao;
@@ -109,7 +111,6 @@ function gerarBola() {
     
     if (!marcou) {
         perder();
-        console.log(gerados)
         return;
     }
 
@@ -138,10 +139,12 @@ bolinha.addEventListener("click", ()=>{
     }  
 })
 
-function perder(){
+async function perder(){
+
     if(jogador != null && pontuacao != 0){
         socket.emit('chat message', { jogador, pontuacao, dificuldade, indexPerfil});
     }
+    socket.emit("restart verificador")
 
     if(pontuacao >= parseInt(localStorage.getItem("maiorPontuacao"))){
         localStorage.setItem("pontuacao", pontuacao)
@@ -151,6 +154,8 @@ function perder(){
         elementPontuacao.style.color = 'red'
         bolinha.style.display = "none"
         document.getElementById("gameOver").style.visibility = 'visible'
+        document.getElementById("botaoJogar").disabled = false
+        
         saldo = parseInt(saldo)+parseInt(pontuacao)
         localStorage.setItem('saldo', saldo)
         document.getElementById("saldo").innerHTML = saldo
@@ -173,13 +178,11 @@ function reiniciar(){
 }
 
 function mudarPerfil(index){
-    console.log(index)
     indexPerfil = index
 
     for(let j = fotoSelecionada.length -1; j > -1; j--){
         fotoSelecionada[j].classList.remove("fotoSelecionada")
     }
-
     document.getElementsByClassName("foto")[index].classList.add("fotoSelecionada")
 }
 

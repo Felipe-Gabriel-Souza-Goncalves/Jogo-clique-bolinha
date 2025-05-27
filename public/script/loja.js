@@ -34,11 +34,7 @@ function corFundo(cor, id, img){
         document.getElementById('areaDoJogo').style.backgroundColor = cor
     }
     if(img != ''){
-        document.getElementById('areaDoJogo').style.background = `url(${img})`
-        document.getElementById('areaDoJogo').style.backgroundRepeat = "no-repeat"
-        document.getElementById('areaDoJogo').style.backgroundSize = "cover"
-        document.getElementById('areaDoJogo').style.backgroundPosition = "center"
-        document.getElementById('areaDoJogo').style.backgroundAttachment = "fixed"
+        document.getElementById('areaDoJogo').style.backgroundImage = `url(${img})`
     }
     if(img == "imagem/fundo/fundo_xadrez.jpg"){
         document.getElementById('areaDoJogo').style.backgroundRepeat = "repeat-x"
