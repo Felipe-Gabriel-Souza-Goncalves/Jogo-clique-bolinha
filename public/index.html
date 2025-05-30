@@ -28,9 +28,10 @@
             <h2 id="gameOver">Fim de Jogo!</h2>
             <div id="divBtnPrincipal">
 
+              <div id="linkArea"></div>
               <button id="botaoJogar" class="botao"
                   onclick="jogando = true; document.getElementsByClassName('divDificuldade')[0].style.display = 'flex'">
-                  <a href="#areaDoJogo">
+                  <a href="#linkArea">
                       Jogar
                   </a>
               </button>
@@ -150,30 +151,19 @@
             <input type="text" id="nickname" placeholder="Insira seu nome de usuário"><br>
             <button type="submit" class="botao">Confirmar</button>
 
-            <div id="gridPerfil">
-                <img onclick="mudarPerfil(0)" src="/imagem/ftPerfil/defensor_esterco.png" alt="defensor_esterco"
-                    class="foto">
-                <img onclick="mudarPerfil(1)" src="/imagem/ftPerfil/falso_cavaleiro.webp" alt="falso_cavaleiro"
-                    class="foto">
-                <img onclick="mudarPerfil(2)" src="/imagem/ftPerfil/knight.png" alt="knight" class="foto">
-                <img onclick="mudarPerfil(3)" src="/imagem/ftPerfil/lordes_louva_deus.png" alt="lordes_louva_deus"
-                    class="foto">
-                <img onclick="mudarPerfil(4)" src="/imagem/ftPerfil/receptaculo_quebrado.png" alt="receptaculo_quebrado"
-                    class="foto">
-                <img onclick="mudarPerfil(5)" src="/imagem/ftPerfil/sentinela.webp" alt="sentinela" class="foto">
-                <img onclick="mudarPerfil(6)" src="/imagem/ftPerfil/xero.webp" alt="xero" class="foto">
-                <img onclick="mudarPerfil(7)" src="/imagem/ftPerfil/colmeia.webp" alt="colmeia" class="foto">
-                <img onclick="mudarPerfil(8)" src="/imagem/ftPerfil/domador_deuses.webp" alt="domador_deuses"
-                    class="foto">
-
+            <div id="containerFotos">
+                <span onclick="menosContador()">&lt;</span>
+                <div class="gridPerfil"></div>
+                <div class="gridPerfil"></div>
+                <div class="gridPerfil"></div>
+                <span onclick="maisContador()">&gt;</span>
             </div>
         </form>
         <p id="aviso">É necessário colocar um nome de usuário para participar do placar!</p>
         <div>
             <div id="placarDispositivo">
-                <button class="botao" disabled>Mobile</button>
-                <button class="botao" disabled>Desktop</button>
-                <span>Em progresso!</span>
+                <button class="botao" onclick="placarDesktop = false; carregarPlacar()">Mobile</button>
+                <button class="botao" onclick="placarDesktop = true; carregarPlacar()">Desktop</button>
             </div>
             <div id="placarDificuldade">
                 <button class="botao" onclick="carregarPlacar('Fácil')">Fácil</button>
@@ -207,6 +197,10 @@
             </table>
         </div>
     </div>
+
+    <footer>
+        <p>Feito por <a target="_blank" href="https://github.com/Felipe-Gabriel-Souza-Goncalves">Felipe Gabriel</a> e <a target="_blank" href="https://github.com/GuilhSchneider">Guilherme Schneider</a></p>
+    </footer>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="script/script.js"></script>

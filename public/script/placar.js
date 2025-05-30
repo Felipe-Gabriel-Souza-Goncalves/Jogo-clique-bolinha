@@ -1,4 +1,52 @@
 var maioresPontuacoes = []
+let contador = 0
+
+ftPerfil.forEach((ft, i) =>{
+    const img = document.createElement("img")
+    img.src = ft
+
+    let descricao = ft.slice(ft.indexOf("l/")+2, ft.indexOf("."))
+    img.alt = descricao
+
+    img.setAttribute("onclick", `mudarPerfil(${i})`)
+
+    img.classList.add("foto")
+
+    if(i >= 0 && i <= 8){
+        document.getElementsByClassName("gridPerfil")[0].appendChild(img)
+    } else if(i >= 9 && i <= 17){
+        document.getElementsByClassName("gridPerfil")[1].appendChild(img)
+
+    } else if(i >= 18 && i <= 26){
+        document.getElementsByClassName("gridPerfil")[2].appendChild(img)
+    }
+
+})
+
+function maisContador(){
+  contador++
+  if(contador == 3){
+    contador = 0
+  }
+  slideFotos()
+}
+function menosContador(){
+  contador--
+  if(contador == -1){
+    contador = 2
+  }
+  slideFotos()
+}
+
+function slideFotos(){
+  document.getElementsByClassName("gridPerfil")[0].style.display = "none"
+  document.getElementsByClassName("gridPerfil")[1].style.display = "none"
+  document.getElementsByClassName("gridPerfil")[2].style.display = "none"
+
+  document.getElementsByClassName("gridPerfil")[contador].style.display = "grid"
+}
+
+slideFotos()
 
 document.querySelector("#formNickname").addEventListener("submit", e =>{
 
@@ -22,7 +70,7 @@ function abrirPlacar(){
   carregarPlacar();
 }
 
-
+// PARA VERIFICAR (isso tá fazendo alguma coisa?)
 function filtrarPontuacoes(){
   maioresPontuacoes.sort((a, b) => {
     return b[0] - a[0]
@@ -30,7 +78,7 @@ function filtrarPontuacoes(){
   return maioresPontuacoes
 }
 
-
+let placarDesktop = true 
 async function carregarPlacar(dificuldade = "geral") {
     try {
         const resposta = await fetch('/placar');
@@ -44,7 +92,8 @@ async function carregarPlacar(dificuldade = "geral") {
           if(item.foto == undefined){
             item.foto = 2
           } 
-          if(item.dificuldade == dificuldade || dificuldade == "geral"){
+          if(item.isDesktop == placarDesktop && (item.dificuldade == dificuldade || dificuldade == "geral") ){
+            console.log("teste ", item.isDesktop == placarDesktop)
             const tr = document.createElement("tr")
             tr.classList.add("linhaPlacar")
             tr.innerHTML = `

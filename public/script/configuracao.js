@@ -1,4 +1,7 @@
 const root = document.querySelector(":root")
+let isDesktop = true
+
+changeDispositivo()
 
 if(sessionStorage.getItem("modoEscuro") == "false"){
     tornarModoClaro()
@@ -57,6 +60,18 @@ function closeAll(id){
         return
     }
     document.getElementById(id).style.display = 'block'
+}
+
+function changeDispositivo(){    
+    if(window.innerWidth <700){
+        isDesktop = false
+    } else{
+        isDesktop = true
+    }
+}
+
+window.onresize = () =>{
+    changeDispositivo()
 }
 
 document.getElementById("inputModoEscuro").addEventListener("change", toggleModoEscuro)

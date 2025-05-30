@@ -19,7 +19,7 @@ if (!fs.existsSync(PLACAR_PATH)) {
 
 io.on('connection', (socket) => {
     console.log('Um jogador se conectou');
-
+    
     verificadores[socket.id] = 0
 
     socket.on('restart verificador', () =>{verificadores[socket.id] = 0;console.log("Verificador reiniciado")})
@@ -49,18 +49,60 @@ io.on('connection', (socket) => {
                 console.error('Erro ao parsear placar.json:', e);
             }
 
+            // Novos dados enviados pelo usuário
             placar.push({
                 jogador: dados.jogador,
                 pontuacao: dados.pontuacao,
                 dificuldade: dados.dificuldade,
                 foto: dados.indexPerfil,
-                rodadas: dados.gerados
+                isDesktop: dados.isDesktop
             });
 
-            // Ordena e limita os 10 melhores
-            placar.sort((a, b) => b.pontuacao - a.pontuacao);
-            placar = placar.slice(0, 40);
 
+            let facil = []
+            let medio = []
+            let dificil = []
+            let extremo = []
+
+            for(let i = 0; i< placar.length; i++){
+                switch (placar[i].dificuldade) {
+                    case "Fácil":
+                        facil.push(placar[i])
+                        break;
+                    case "Médio":
+                        medio.push(placar[i])
+                        break;
+                    case "Difícil":
+                        dificil.push(placar[i])
+                        break;
+                    case "Extremo":
+                        extremo.push(placar[i])
+                        break;
+                }
+            }
+
+            // Filtrar 10 melhores do Fácil
+            
+            facil.sort((a, b) => b.pontuacao - a.pontuacao);
+            facil = facil.slice(0, 20)
+
+            // Filtrar 10 melhores do Médio
+            medio.sort((a, b) => b.pontuacao - a.pontuacao);
+            medio = medio.slice(0, 20)
+
+            // Filtrar 10 melhores do Difícil
+            dificil.sort((a, b) => b.pontuacao - a.pontuacao);
+            dificil = dificil.slice(0, 20)
+
+            // Filtrar 10 melhores do Extremo
+            extremo.sort((a, b) => b.pontuacao - a.pontuacao);
+            extremo = extremo.slice(0, 20)
+
+            // Junta tudo no placar de maneira organizada
+            placar = []
+            placar = [...facil, ...medio, ...dificil, ...extremo]
+            placar.sort((a, b) => b.pontuacao - a.pontuacao);
+            
             // Salva novamente no arquivo
             fs.writeFile(PLACAR_PATH, JSON.stringify(placar, null, 2), (err) => {
                 if (err) {
@@ -74,9 +116,8 @@ io.on('connection', (socket) => {
             io.emit('atualizar placar', placar);
         });
     });
-
-
 });
+
 
 app.get('/placar', (req, res) => {
     fs.readFile(PLACAR_PATH, 'utf8', (err, data) => {

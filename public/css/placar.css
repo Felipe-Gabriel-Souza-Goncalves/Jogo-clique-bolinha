@@ -52,10 +52,18 @@
   filter: opacity(0.4);
 }
 
-#gridPerfil{
+#containerFotos{
+  display: flex;
+}
+#containerFotos span{
+  font-size: 3em;
+  align-content: center;
+}
+
+.gridPerfil{
   margin: 0 auto;
   margin-top: 15px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 60px);
   grid-template-rows: repeat(3, 60px);
   gap: 5px;
@@ -63,7 +71,7 @@
   padding: 10px;
   width: fit-content;
 }
-#gridPerfil .foto{
+.gridPerfil .foto{
   border: 1px solid white;
   width: 60px;
 }

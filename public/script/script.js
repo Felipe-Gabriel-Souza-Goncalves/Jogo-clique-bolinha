@@ -5,10 +5,6 @@ const maiorPontuacao = document.getElementById("maiorPontuacao")
 const elementPontuacao = document.getElementById("pontuacao")
 const fotoSelecionada = document.getElementsByClassName("fotoSelecionada")
 
-const config = {
-
-}
-
 let jogando = false
 let marcou = true
 let pontuacao = 0
@@ -20,17 +16,34 @@ var saldo = 0
 let jogador = null
 let indexPerfil = undefined
 var posicaoAnteriorX = 50; 
-var ftPerfil = ["/imagem/ftPerfil/defensor_esterco.png",
+var ftPerfil = ["/imagem/ftPerfil/anciao hu.png",
+                "/imagem/ftPerfil/colmeia.webp",
+                "/imagem/ftPerfil/defensor_esterco.png",
+                "/imagem/ftPerfil/domador_deuses.webp",
                 "/imagem/ftPerfil/falso_cavaleiro.webp",
+                "/imagem/ftPerfil/flukemarm.png",
+                "/imagem/ftPerfil/galien.png",
+                "/imagem/ftPerfil/gorb.png",
+                "/imagem/ftPerfil/greatnailsagesly.png",
+                "/imagem/ftPerfil/greyprincezotecircle.png",
+                "/imagem/ftPerfil/gruzmothericon.png",
+                "/imagem/ftPerfil/hornetprotectoricon.png",
                 "/imagem/ftPerfil/knight.png",
                 "/imagem/ftPerfil/lordes_louva_deus.png",
-                "/imagem/ftPerfil/receptaculo_quebrado.png",
+                "/imagem/ftPerfil/markoth.png",
+                "/imagem/ftPerfil/marmuicon.png",
+                "/imagem/ftPerfil/massivemosschargericon.png",
+                "/imagem/ftPerfil/noeyesicon.png",
+                "/imagem/ftPerfil/noskicon.png",
+                "/imagem/ftPerfil/oblobbleicon.png",
+                "/imagem/ftPerfil/paintmastersheoicon.png",
+                "/imagem/ftPerfil/purevesselicon.png",
+                "/imagem/ftPerfil/radianceicon.png",
                 "/imagem/ftPerfil/sentinela.webp",
-                "/imagem/ftPerfil/xero.webp",
-                "/imagem/ftPerfil/colmeia.webp",
-                "/imagem/ftPerfil/domador_deuses.webp"]
-
-
+                "/imagem/ftPerfil/soulmastericon.png",
+                "/imagem/ftPerfil/soulwarrioricon.png",
+                "/imagem/ftPerfil/thecollectoricon.png",
+                ]
 
 if(localStorage.getItem("saldo") !=null){
     saldo = parseInt(localStorage.getItem("saldo"))
@@ -142,7 +155,7 @@ bolinha.addEventListener("click", ()=>{
 async function perder(){
 
     if(jogador != null && pontuacao != 0){
-        socket.emit('chat message', { jogador, pontuacao, dificuldade, indexPerfil});
+        socket.emit('chat message', { jogador, pontuacao, dificuldade, indexPerfil, isDesktop});
     }
     socket.emit("restart verificador")
 
