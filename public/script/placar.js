@@ -92,8 +92,11 @@ async function carregarPlacar(dificuldade = "geral") {
           if(item.foto == undefined){
             item.foto = 2
           } 
-          if(item.jogador.includes('<style>')){
-              item.jogador = item.jogador.replace('<style>', '-style-')
+          if(item.jogador.includes('<')){
+              item.jogador = item.jogador.replace(/</g, '-')
+          }          
+          if(item.jogador.includes('>')){
+              item.jogador = item.jogador.replace(/>/g, '-')
           }
           if(item.isDesktop == placarDesktop && (item.dificuldade == dificuldade || dificuldade == "geral") ){
             console.log("teste ", item.isDesktop == placarDesktop)
