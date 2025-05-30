@@ -92,6 +92,9 @@ async function carregarPlacar(dificuldade = "geral") {
           if(item.foto == undefined){
             item.foto = 2
           } 
+          if(item.jogador.includes('<style>')){
+              item.jogador = item.jogador.replace('<style>', '-style-')
+          }
           if(item.isDesktop == placarDesktop && (item.dificuldade == dificuldade || dificuldade == "geral") ){
             console.log("teste ", item.isDesktop == placarDesktop)
             const tr = document.createElement("tr")
