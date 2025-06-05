@@ -1,4 +1,4 @@
-# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.5]
+# ATUALIZAÇÕES DO PROJETO - Versão atual: [1.7.1]
 &nbsp;
 ## [1.1] Atualização 19/11/2024
     
@@ -73,13 +73,17 @@
 ## [1.6.2] Correção de segurança 27/05/2025
 - Medidas de prevenção de burlar a pontuação
 
-## [1.7] Correção 27/05/2025
+## [1.7] Atualização 27/05/2025
 ### ATUALIZAÇÃO
 - Placar para até 40 colocações
 - Novas seções de placar referente a dificuldade
+- Novas seções de placar referente ao dispositivo (Desktop/Mobile)
 ### CORREÇÕES
 - Nome inválido
 - Imagens desproporcionais no campo do jogo
 - Pontuação não enviando
 - Botão de fechar do placar transbordando
 - Botão de jogar agora fica desativado durante a partida
+
+## [1.7.1] Correção 04/06/2025
+- Correção de enviar usuário ao trocar de foto
